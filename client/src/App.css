@@ -6,8 +6,8 @@
 
 .Graph {
   background-color: #282c34;
-  min-height: 100vh;
-  width: 66%;
+  width: inherit;
+  height: inherit;
   margin:auto;
   display: flex;
   flex-direction: column;
@@ -15,4 +15,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.ScrollStep {
+  height: 100vh;
 }

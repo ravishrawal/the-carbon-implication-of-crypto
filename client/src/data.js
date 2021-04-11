@@ -1,5 +1,5 @@
 const data = {
-	'AI': [
+	'Crypto': [
 				{
 					'year': 2000,
 					'value': 167

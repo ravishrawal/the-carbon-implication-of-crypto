@@ -3,7 +3,7 @@ import {VictoryChart, VictoryLine, VictoryTheme, VictoryLabel, VictoryLegend} fr
 import data from './data.js';
 import './App.css';
 
-class Graph extends Component {
+class RenewableGraph extends Component {
 	constructor(){
 		super();
 		this.state={
@@ -13,7 +13,7 @@ class Graph extends Component {
 	render(){
 		const {data} = this.state;
 		return (
-				<div>
+				<div style={{height:"inherit", width: "inherit"}}>
 					{
 						data && 
 						<div className="Graph">
@@ -24,7 +24,7 @@ class Graph extends Component {
 							  width={450}
 							>
 								<VictoryLabel 
-									text="Carbon Footprint of AI" 
+									text="Carbon Footprint of Cryptocurrency" 
 									x={225} 
 									y={30} 
 									textAnchor="middle"
@@ -32,11 +32,11 @@ class Graph extends Component {
 								        { fill: "white" }
 								        ]}
 								/>
-								<VictoryLegend x={60} y={45}
+								<VictoryLegend x={50} y={45}
 								  orientation="vertical"
 								  gutter={20}
 								  data={[
-								    { name: "AI", symbol: { fill: "#c43a31" }, labels: { fill: "white" } } ,
+								    { name: "Cryptocurrency", symbol: { fill: "#c43a31" }, labels: { fill: "white" } } ,
 								    { name: "Renewables", symbol: { fill: "#2FA453" }, labels: { fill: "white" } }
 								  ]}
 								/>
@@ -45,7 +45,7 @@ class Graph extends Component {
 								      data: { stroke: "#c43a31" },
 								      parent: { border: "1px solid #ccc"}
 								    }}
-								    data={data.AI}
+								    data={data.Crypto}
 								    x={d=>String(d.year)}
 								    y={d=>d.value}
 								    scale={{x: "time", y: "linear"}}
@@ -76,4 +76,4 @@ class Graph extends Component {
 	}
 }
 
-export default Graph;
+export default RenewableGraph;
