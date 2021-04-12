@@ -20,11 +20,11 @@ class BitcoinComparissonGraph extends Component {
             <VictoryChart
               theme={VictoryTheme.material}
               minDomain={{ y: 0 }}
-              maxDomain={{ y: 80 }}
+              maxDomain={{ y: 270 }}
               width={450}
             >
               <VictoryLabel
-                text="2020 Energy Consumtion (twh)"
+                text="Energy Consumtion comparison (twh)"
                 x={225}
                 y={30}
                 textAnchor="middle"
@@ -41,14 +41,16 @@ class BitcoinComparissonGraph extends Component {
                   data: { fill: "#c43a31" },
                 }}
                 data={[
-                  { x: "NYC \n Subway", y: 1.8 },
+                  { x: "U.S\n Beverage \n 2018", y: 32.34 },
+                  { x: "U.S\n Dairy Industry\n 2018", y: 36.34 },
+                  { x: "Bitcoin\n energy \n 2020", y: 70.39 },
+                  { x: "U.S Plastics\n Industry\n 2018", y: 75.32 },
+                  { x: "U.S Petroleum \n Industry\n 2018", y: 265.65 },
 
-                  { x: "1 million US \nhouseholds", y: 11 },
-                  {
-                    x: "1 million flights \n from NYC to LA ",
-                    y: 32.7,
-                  },
-                  { x: "Bitcoin\n 2020 energy", y: 70.39 },
+                  // {
+                  //   x: "Federal Government 2017 ",
+                  //   y: 268.8,
+                  // },
                 ]}
               />
             </VictoryChart>
@@ -60,3 +62,6 @@ class BitcoinComparissonGraph extends Component {
 }
 
 export default BitcoinComparissonGraph;
+
+// https://www.eia.gov/consumption/manufacturing/data/2018/#r13
+// https://www.eia.gov/consumption/manufacturing/data/2018/pdf/Table1_2.pdf

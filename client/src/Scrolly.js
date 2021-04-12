@@ -14,7 +14,7 @@ const textContent = [
   "The last x years have shown an incredible rise in adoption...",
   "and price",
   "In 2020, Bitcoin consumes as much energy as 6 million US households",
-  "and as much as the entire XX industry as a whole.",
+  "and as much as the entire U.S Plastic Industry as a whole.",
   "hash rate",
   "hash rate vs energy",
   "<h5>Despite a rising rate of renewable adoption, the future looks bleak</h5>",
