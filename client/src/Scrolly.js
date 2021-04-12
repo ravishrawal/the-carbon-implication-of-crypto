@@ -2,6 +2,10 @@ import React, { PureComponent } from 'react';
 import injectSheet from 'react-jss';
 import { Scrollama, Step } from 'react-scrollama';
 import RenewableGraph from './RenewableGraph.js'
+import PriceGraph from './PriceGraph.js'
+import VolumeGraph from './VolumeGraph.js'
+import HashRateGraph from './HashRateGraph.js'
+import EnergyHashRateGraph from './EnergyHashRateGraph.js'
 
 // ADD YOUR TEXT HERE
 const textContent = [
@@ -30,7 +34,19 @@ const vizContent = [
                       <RenewableGraph/>,
                       <RenewableGraph/>,
                       <RenewableGraph/>,
-                      <RenewableGraph/>
+                      <VolumeGraph/>,
+                      <PriceGraph/>,
+                      <RenewableGraph/>,
+                      <RenewableGraph/>,
+                      <HashRateGraph/>,
+                      <EnergyHashRateGraph/>,
+                      <RenewableGraph/>,
+                      <RenewableGraph/>,
+                      <RenewableGraph/>,
+                      <RenewableGraph/>,
+                      <RenewableGraph/>,
+                      <RenewableGraph/>,
+                      <RenewableGraph/>,
                    ]
 
 
