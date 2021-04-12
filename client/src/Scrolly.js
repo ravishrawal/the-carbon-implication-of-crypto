@@ -3,6 +3,8 @@ import injectSheet from "react-jss";
 import { Scrollama, Step } from "react-scrollama";
 import RenewableGraph from "./RenewableGraph.js";
 import BitcoinComparissonGraph from "./BitcoinComparissonGraph";
+import RenewableAdoption from "./RenewableAdoption";
+
 import BitcoinComparissonGraph2 from "./BitcoinComparissonGraph2";
 import PriceGraph from "./PriceGraph.js";
 import VolumeGraph from "./VolumeGraph.js";
@@ -20,7 +22,7 @@ const textContent = [
   "and as much as the entire U.S Plastic Industry as a whole.",
   "hash rate",
   "hash rate vs energy",
-  "<h5>Despite a rising rate of renewable adoption, the future looks bleak</h5>",
+  "Despite a rising rate of renewable adoption, the future looks bleak",
   "And not necessarily to the noblest end",
   "We need to establish policies that leverage the benefits of cryptocurrency while looking out for the environment. Here’s what we can do:",
   "<h5>Apply lower bounds on algorithm efficiency:</h5> Bitcoin consumes an immense amount of energy, but only makes up 80% of the market cap and is actually more energy efficient than a lot of its counterparts. This is because it uses a SHA-256 hash algorithm, which cryptocurrencies like Monero and Dogecoin do not support, rendering them magnitudes more energy intensive.",
@@ -42,7 +44,7 @@ const vizContent = [
   <BitcoinComparissonGraph2 />,
   <HashRateGraph />,
   <EnergyHashRateGraph />,
-  <RenewableGraph />,
+  <RenewableAdoption />,
   <RenewableGraph />,
   <RenewableGraph />,
   <RenewableGraph />,
