@@ -20,7 +20,7 @@ class BitcoinComparissonGraph extends Component {
             <VictoryChart
               theme={VictoryTheme.material}
               minDomain={{ y: 0 }}
-              maxDomain={{ y: 26000 }}
+              maxDomain={{ y: 80 }}
               width={450}
             >
               <VictoryLabel
@@ -41,15 +41,14 @@ class BitcoinComparissonGraph extends Component {
                   data: { fill: "#c43a31" },
                 }}
                 data={[
-                  { x: "NYC \n Subway", y: 180 }, //1.8, but added 180 so it is observable on the map
+                  { x: "NYC \n Subway", y: 1.8 },
+
+                  { x: "1 million US \nhouseholds", y: 11 },
                   {
-                    x: "10 million flights \n from NYC to LA ",
-                    y: 320.7,
-                    y0: 3,
+                    x: "1 million flights \n from NYC to LA ",
+                    y: 32.7,
                   },
-                  { x: "US \nhouseholds", y: 6081 },
-                  { x: "Bitcoin\n 2020 energy", y: 25693, y0: 2 },
-                  { x: 5, y: 6, y0: 3 },
+                  { x: "Bitcoin\n 2020 energy", y: 70.39, y0: 2 },
                 ]}
               />
             </VictoryChart>

@@ -42,11 +42,12 @@ let jsonOutput = {
 for (let [year, energyConsumed] of data) {
   // console.log(year, energyConsumed);
   let dailyAverage = energyConsumed / itemPerYear.get(year);
-  let total = energyConsumed;
+  let total = dailyAverage;
   let obj = {};
   obj[year] = total;
 
-  if (year === "2020") jsonOutput["BTC"].push(obj);
+  // if (year === "2020")
+  jsonOutput["BTC"].push(obj);
 }
 
 function convertBthToTwh(bth) {
@@ -57,6 +58,7 @@ function convertBthToTwh(bth) {
 }
 
 //https://www.eia.gov/totalenergy/data/monthly/pdf/sec2.pdf
+// https://www.eia.gov/tools/faqs/faq.php?id=97&t=3
 let trillion = 1000000000000; // values are in trillion
 let residentUSbth = 20748 * trillion; // 2020 U.S household
 let obj = {};

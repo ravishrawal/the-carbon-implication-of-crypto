@@ -4,6 +4,8 @@ import { Scrollama, Step } from "react-scrollama";
 import RenewableGraph from "./RenewableGraph.js";
 import BitcoinComparissonGraph from "./BitcoinComparissonGraph";
 
+import BitcoinComparissonGraph2 from "./BitcoinComparissonGraph2";
+
 // ADD YOUR TEXT HERE
 const textContent = [
   "The Carbon Implication Of Crypto",
@@ -11,7 +13,7 @@ const textContent = [
   "What Is Crypto 2",
   "The last x years have shown an incredible rise in adoption...",
   "and price",
-  "In 2020, Bitcoin consumes as much energy as four years of US households electricity expending",
+  "In 2020, Bitcoin consumes as much energy as 6 million US households",
   "and as much as the entire XX industry as a whole.",
   "hash rate",
   "hash rate vs energy",
@@ -35,6 +37,7 @@ const vizContent = [
   <RenewableGraph />,
 
   <BitcoinComparissonGraph />,
+  <BitcoinComparissonGraph2 />,
 ];
 
 const sectionHeight = 100;
