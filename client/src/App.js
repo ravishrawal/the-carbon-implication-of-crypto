@@ -17,7 +17,7 @@ function App() {
       <SectionScreen title="What is cryptocurrency?" text={titleContent[0]} textColor='white' backgroundColor='green'/>
       <Scrolly slice={[0, 7]} background={colors.cryptoblack}/>
       <SectionScreen text={"But Let's Gain Some Perspective"} textColor='black' backgroundColor='red'/>
-      <Scrolly slice={[7, 14]} background={colors.cryptoblack}/>
+      <Scrolly slice={[7, 16]} background={colors.cryptoblack}/>
     </div>
   );
 }

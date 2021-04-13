@@ -2,52 +2,48 @@ import {Component} from 'react';
 import {VictoryChart, VictoryLine, VictoryTheme, VictoryLabel, VictoryLegend, VictoryAxis} from 'victory';
 import data from './hash_energy_data.js';
 import './App.css';
+import custom_theme from './theme.js';
+
+var avg_data = []
+for(let i=0;i<data.length-80;i+=80){
+	avg_data.push(data[i])
+}
+console.log('AVERGAGE',avg_data)
 
 class EnergyHashRateGraph extends Component {
 	constructor(){
 		super();
 		this.state={
-			data
+			avg_data
         }
 	}
 	render(){
-        const {data} = this.state;
+        const {avg_data} = this.state;
 		return (
 				<div style={{height:"inherit", width: "inherit"}}>
 					{
-						data && 
+						avg_data && 
 						<div className="Graph">
 							<VictoryChart
-							  theme={VictoryTheme.material}
+							  theme={custom_theme}
 							  minDomain={{ y: 0 }}
 							  maxDomain={{ y: 140 }}
 							  width={450}
-                              style={[
-								        { fill: "white" }
-								        ]}
 							>
-								<VictoryLabel 
-									text="Energy Consumption By Bitcoin Network Vs Hash Rate" 
-									x={225} 
-									y={30} 
-									textAnchor="middle"
-									style={[
-								        { fill: "white" }
-								        ]}
-								/>
 								<VictoryLegend x={50} y={45}
+									theme={custom_theme}
 								  orientation="vertical"
 								  gutter={20}
 								  data={[
-								    { name: "Energy Consumption per Hash Rate", symbol: { fill: "#9a9af8" } }
+								    { name: "Energy Consumption vs Hash Rate" }
 								  ]}
 								/>
 								<VictoryLine
+									theme={custom_theme}
 								    style={{
-								      data: { stroke: "#9a9af8" },
 								      parent: { border: "1px solid #ccc" }
 								    }}
-								    data={data}
+								    data={avg_data}
 								    x={d=>d.Hash}
 								    y={d=>d.GUESS}
 								    scale={{x: "linear", y: "linear"}}
@@ -58,38 +54,25 @@ class EnergyHashRateGraph extends Component {
 								/>
 								<VictoryAxis
 									dependentAxis
-									style={{
-									axisLabel: { fontSize: 12, padding: 35 },
-                                    grid: { strokeWidth: 0 },
-                                    tickLabels: {
-										fill: "#e5e5e5",
-									  },
-									  axis: {
-										stroke: "#e5e5e5", //CHANGE COLOR OF X-AXIS
-                                      },
-                                      axisLabel: {
-                                        fill: "#e5e5e5",
-                                        padding: 35
-									  }
-                                    }}
-                                    label="Energy Consumption (twh)"
+									theme={custom_theme}
+                                    label="Energy Consumption (TWh)"
+                                    style={{
+                                    axisLabel: {
+	                                    	padding:30,
+								          	fontSize:12
+                                    	}
+                                    }}	
 								/>
 								<VictoryAxis
+									theme={custom_theme}
+									tickFormat={(tick) => `${tick/1e6}`}
+									label="Million Hashes Per Second"
 									style={{
-									axisLabel: { fontSize: 12, padding: 30 },
-                                    grid: { strokeWidth: 0 },
-                                    tickLabels: {
-										fill: "#e5e5e5",
-									  },
-									  axis: {
-										stroke: "#e5e5e5", //CHANGE COLOR OF X-AXIS
-                                      },
-                                      axisLabel: {
-                                        fill: "#e5e5e5",
-                                        padding: 35
-									  }
+                                    axisLabel: {
+	                                    	padding:22,
+								          	fontSize:12
+                                    	}
                                     }}
-                                    label="Hash rate, mean (h/s)"
 								/>
 							</VictoryChart>
 						</div>

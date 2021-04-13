@@ -2,7 +2,7 @@ import {Component} from 'react';
 import {VictoryChart, VictoryLine,VictoryBar, VictoryTheme, VictoryLabel, VictoryLegend,VictoryAxis} from 'victory';
 import algo_data from './algo_data.js';
 import './App.css';
-import custom_theme from './theme.js'
+import custom_theme, {colors} from './theme.js'
 
 class BarChart extends Component {
 	constructor(){
@@ -31,21 +31,25 @@ class BarChart extends Component {
 								scale={{x:"linear",y:"log"}}
 
 							>
-								<VictoryLabel 
-									text="Efficiency of Suitable Mining Devices for Hashing Algos" 
-									x={100} 
+							<VictoryLabel 
+									text="Efficiency of Suitable Mining Devices for Hashing Algos"
+									theme={custom_theme}
+									x={120} 
 									y={10} 
 									textAnchor="middle"
 									style={[
-								        { fill: "white",
-								          fontSize: 8
+								        { 
+								          	fontSize:5,
+								          	fontFamily: "Helvetica",
+								          	fill:colors.cryptocream
 								        }
 								        ]}
 								/>
 								<VictoryAxis
 									dependentAxis
+									theme={custom_theme}
 									label = {()=>{
-										var l = "Log(Efficiency)\nHashes/s/Watt"
+										var l = "log(Efficiency) (Hashes/s/Watt)"
 										return l
 										}	
 									}
@@ -53,7 +57,7 @@ class BarChart extends Component {
 									tickFormat={(y) => (`${y.toExponential()} `)}
 									style={{
 									axis: {stroke: "#756f6a"},
-									axisLabel: {fontSize: 4.5, padding: 32, angle: 0},
+									axisLabel: {fontSize: 4.5, padding: 20, angle: 270},
 									// grid: {stroke: ({ tick }) => tick > 0.5 ? "red" : "grey"},
 									// ticks: {stroke: "grey", size: 5},
 									tickLabels: {fontSize: 5, padding: 0}
@@ -91,6 +95,16 @@ class BarChart extends Component {
 										}
 										
 									}}
+									labels={true}
+								    labelComponent={
+								    	<VictoryLabel
+								    	text={({ datum }) => `${datum.efficiency.toExponential(0)}`}
+								    	style={[{
+								    		fontSize: 3,
+								    		fill: colors.cryptogrey,
+								    	}]}
+								    	/>
+								    }
 								/>	
 							</VictoryChart>
 						</div>

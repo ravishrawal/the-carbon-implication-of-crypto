@@ -45,6 +45,35 @@ class PriceGraph extends Component {
 								    	{ name: "Bitcoin Price ($)"}
 								  	]}
 								/>
+								<VictoryAxis
+									dependentAxis
+									theme={custom_theme}
+									// label = {()=>{
+									// 	var l = " - "
+									// 	return l
+									// 	}	
+									// }
+									// tickValues= {[0,1e0,1e5,1e10]}
+									tickFormat={(y) => (`$${y/1e3}K`)}
+									style={{
+									axisLabel: {fontSize: 4.5, padding: 32, angle: 0},
+									// grid: {stroke: ({ tick }) => tick > 0.5 ? "red" : "grey"},
+									// ticks: {stroke: "grey", size: 5},
+									tickLabels: {fontSize: 10, padding: 5}
+									}}
+						        />	
+								<VictoryAxis
+									theme={custom_theme}
+									// dependentAxis
+									// tickFormat specifies how ticks should be displayed
+									// tickFormat={(y) => (`$${y /1e9} GHashes/s/W`)}
+									style={{
+									axisLabel: {fontSize: 10, padding: 35},
+									// grid: {stroke: ({ tick }) => tick > 0.5 ? "red" : "grey"},
+									// ticks: {stroke: "grey", size: 5},
+									tickLabels: {fontSize: 10, padding: 5}
+									}}
+						        />
 								<VictoryLine
 								    style={{
 								      parent: { border: "1px solid #ccc"}
