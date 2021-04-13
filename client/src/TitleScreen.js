@@ -1,6 +1,6 @@
 import React from 'react';
 import injectSheet from 'react-jss';
-import bg_img from '/Users/ravishrawal/Desktop/Columbia MS/Spring 2021/Data Vis/the-carbon-implication-of-crypto/client/src/crypto-header-v2.png';
+import bg_img from './crypto-header-v2.png';
 
 
 const sectionHeight = 100
