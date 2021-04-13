@@ -1,9 +1,9 @@
 import {Component} from 'react';
 import {VictoryChart, VictoryLine, VictoryTheme, VictoryLabel, VictoryLegend, VictoryAxis} from 'victory';
-import data from './bitcoin_hashrate_data.js';
+import data from './hash_energy_data.js';
 import './App.css';
 
-class HashRateGraph extends Component {
+class EnergyHashRateGraph extends Component {
 	constructor(){
 		super();
 		this.state={
@@ -20,14 +20,14 @@ class HashRateGraph extends Component {
 							<VictoryChart
 							  theme={VictoryTheme.material}
 							  minDomain={{ y: 0 }}
-							  maxDomain={{ y: 160000000 }}
+							  maxDomain={{ y: 140 }}
 							  width={450}
                               style={[
 								        { fill: "white" }
 								        ]}
 							>
 								<VictoryLabel 
-									text="Hash Rate of Cryptocurrency" 
+									text="Energy Consumption By Bitcoin Network Vs Hash Rate" 
 									x={225} 
 									y={30} 
 									textAnchor="middle"
@@ -39,7 +39,7 @@ class HashRateGraph extends Component {
 								  orientation="vertical"
 								  gutter={20}
 								  data={[
-								    { name: "Hash Rate per Year", symbol: { fill: "#9a9af8" } }
+								    { name: "Energy Consumption per Hash Rate", symbol: { fill: "#9a9af8" } }
 								  ]}
 								/>
 								<VictoryLine
@@ -48,9 +48,9 @@ class HashRateGraph extends Component {
 								      parent: { border: "1px solid #ccc" }
 								    }}
 								    data={data}
-								    x={d=>d.Date}
-								    y={d=>d.Value}
-								    scale={{x: "time", y: "linear"}}
+								    x={d=>d.Hash}
+								    y={d=>d.GUESS}
+								    scale={{x: "linear", y: "linear"}}
 								    animate={{
 										duration: 2000,
 										onLoad: { duration: 1000 }
@@ -60,32 +60,36 @@ class HashRateGraph extends Component {
 									dependentAxis
 									style={{
 									axisLabel: { fontSize: 12, padding: 35 },
-									grid: { strokeWidth: 0 },
-									tickLabels: {
+                                    grid: { strokeWidth: 0 },
+                                    tickLabels: {
 										fill: "#e5e5e5",
 									  },
 									  axis: {
 										stroke: "#e5e5e5", //CHANGE COLOR OF X-AXIS
-									  },
-									}}
-									tickFormat={(t) => `${t} (h/s)`}
+                                      },
+                                      axisLabel: {
+                                        fill: "#e5e5e5",
+                                        padding: 35
+									  }
+                                    }}
+                                    label="Energy Consumption (twh)"
 								/>
 								<VictoryAxis
 									style={{
 									axisLabel: { fontSize: 12, padding: 30 },
-									grid: { strokeWidth: 0 },
-									tickLabels: {
+                                    grid: { strokeWidth: 0 },
+                                    tickLabels: {
 										fill: "#e5e5e5",
 									  },
 									  axis: {
 										stroke: "#e5e5e5", //CHANGE COLOR OF X-AXIS
-									  },
-									  axisLabel: {
+                                      },
+                                      axisLabel: {
                                         fill: "#e5e5e5",
                                         padding: 35
 									  }
-									}}
-									label="Year"
+                                    }}
+                                    label="Hash rate, mean (h/s)"
 								/>
 							</VictoryChart>
 						</div>
@@ -95,4 +99,4 @@ class HashRateGraph extends Component {
 	}
 }
 
-export default HashRateGraph;
+export default EnergyHashRateGraph;

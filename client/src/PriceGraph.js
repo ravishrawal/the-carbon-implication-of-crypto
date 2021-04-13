@@ -29,7 +29,7 @@ class PriceGraph extends Component {
                                     ]}
 							>
 								<VictoryLabel 
-									text="Price of Cryptocurrency" 
+									text="Bitcoin Price Over Time" 
 									x={225} 
 									y={30} 
 									textAnchor="middle"
@@ -41,12 +41,12 @@ class PriceGraph extends Component {
 								  orientation="vertical"
 								  gutter={20}
 								  data={[
-								    { name: "Cryptocurrency", symbol: { fill: "#c43a31" } }
+								    { name: "Price per Year", symbol: { fill: "#9a9af8" }  }
 								  ]}
 								/>
 								<VictoryLine
 								    style={{
-								      data: { stroke: "#c43a31" },
+								      data: { stroke: "#9a9af8" },
 								      parent: { border: "1px solid #ccc"}
 								    }}
 								    data={data}
@@ -57,6 +57,38 @@ class PriceGraph extends Component {
 										duration: 2000,
 										onLoad: { duration: 1000 }
 									}}
+								/>
+								<VictoryAxis
+									dependentAxis
+									style={{
+									axisLabel: { fontSize: 12, padding: 35, fill: "white"
+									},
+									grid: { strokeWidth: 0 },
+									tickLabels: {
+										fill: "#e5e5e5",
+									  },
+									  axis: {
+										stroke: "#e5e5e5", //CHANGE COLOR OF X-AXIS
+									  },
+									}}
+									tickFormat={(t) => `$ ${t}`}
+								/>
+								<VictoryAxis
+									style={{
+									axisLabel: { fontSize: 12, padding: 30 },
+									grid: { strokeWidth: 0 },
+									tickLabels: {
+										fill: "#e5e5e5",
+									  },
+									  axis: {
+										stroke: "#e5e5e5", //CHANGE COLOR OF X-AXIS
+									  },
+									  axisLabel: {
+                                        fill: "#e5e5e5",
+                                        padding: 35
+									  }
+									}}
+									label="Year"
 								/>
 							</VictoryChart>
 						</div>

@@ -5,7 +5,7 @@ import RenewableGraph from './RenewableGraph.js'
 import PriceGraph from './PriceGraph.js'
 import VolumeGraph from './VolumeGraph.js'
 import HashRateGraph from './HashRateGraph.js'
-import EnergyHashRateGraph from './EnergyHashRateGraph.js'
+import EnergyHashGraph from './EnergyHashGraph.js'
 
 // ADD YOUR TEXT HERE
 const textContent = [
@@ -39,14 +39,14 @@ const vizContent = [
                       <RenewableGraph/>,
                       <RenewableGraph/>,
                       <HashRateGraph/>,
-                      <EnergyHashRateGraph/>,
+                      <EnergyHashGraph/>,
                       <RenewableGraph/>,
                       <RenewableGraph/>,
                       <RenewableGraph/>,
                       <RenewableGraph/>,
                       <RenewableGraph/>,
                       <RenewableGraph/>,
-                      <RenewableGraph/>,
+                      <RenewableGraph/>
                    ]
 
 
@@ -188,7 +188,7 @@ class Scrolly extends PureComponent {
               progress
               onStepProgress={this.onStepProgress}
               offset={0.5}
-              debug
+              // debug
             >
               {steps.slice(startSlice,endSlice).map(value => {
                 const isVisible = value === data;
