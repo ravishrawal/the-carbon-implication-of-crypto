@@ -2,6 +2,7 @@ import {Component} from 'react';
 import {VictoryChart, VictoryLine, VictoryTheme, VictoryLabel, VictoryLegend, VictoryAxis} from 'victory';
 import data from './bitcoin_price_data.js';
 import './App.css';
+import custom_theme from './theme.js';
 
 class PriceGraph extends Component {
 	constructor(){
@@ -18,7 +19,7 @@ class PriceGraph extends Component {
 						data && 
 						<div className="Graph">
 							<VictoryChart
-							  theme={VictoryTheme.material}
+							  theme={custom_theme}
 							  minDomain={{ y: 0 }}
 							  maxDomain={{ y: 50000 }}
 							  width={450}
@@ -28,8 +29,7 @@ class PriceGraph extends Component {
                                         }
                                     ]}
 							>
-								<VictoryLabel 
-									text="Price of Cryptocurrency" 
+								<VictoryLabel  
 									x={225} 
 									y={30} 
 									textAnchor="middle"
@@ -38,15 +38,15 @@ class PriceGraph extends Component {
 								        ]}
 								/>
 								<VictoryLegend x={50} y={45}
-								  orientation="vertical"
-								  gutter={20}
-								  data={[
-								    { name: "Cryptocurrency", symbol: { fill: "#c43a31" } }
-								  ]}
+									theme = {custom_theme}
+								 	orientation="vertical"
+								 	gutter={20}
+								 	data={[
+								    	{ name: "Bitcoin Price ($)"}
+								  	]}
 								/>
 								<VictoryLine
 								    style={{
-								      data: { stroke: "#c43a31" },
 								      parent: { border: "1px solid #ccc"}
 								    }}
 								    data={data}

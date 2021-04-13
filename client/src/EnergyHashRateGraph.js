@@ -3,6 +3,7 @@ import {VictoryChart, VictoryLine, VictoryTheme, VictoryLabel, VictoryLegend} fr
 import data from './bitcoin_hashrate_data.js';
 import energy_data from './bitcoin_energy_data.js';
 import './App.css';
+import custom_theme from './theme.js';
 
 class EnergyHashRateGraph extends Component {
 	constructor(){
@@ -19,7 +20,7 @@ class EnergyHashRateGraph extends Component {
 						data && 
 						<div className="Graph">
 							<VictoryChart
-							  theme={VictoryTheme.material}
+							  theme={custom_theme}
 							  minDomain={{ y: 0 }}
 							  maxDomain={{ y: 160000000 }}
 							  width={400}

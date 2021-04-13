@@ -4,7 +4,7 @@ const algo_energy_data = [
 		energy: 1e9 
 	},
 	{
-		algo: 'Non-POW',
+		algo: 'PoS',
 		energy: 1e3 
 	},
 ]

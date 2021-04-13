@@ -6,11 +6,14 @@ import PriceGraph from './PriceGraph.js';
 import VolumeGraph from './VolumeGraph.js';
 import HashRateGraph from './HashRateGraph.js';
 import EnergyHashRateGraph from './EnergyHashRateGraph.js'
+import BarChartTs from './BarChartTs.js'
+import BarChartNoPoW from './BarChartNoPoW.js'
 import {scrollyContent as textContent} from './textContent.js';
-import BenefitsTable from '/Users/ravishrawal/Desktop/Columbia MS/Spring 2021/Data Vis/the-carbon-implication-of-crypto/client/src/BenefitsTable.png';
-import BitcoinImg from '/Users/ravishrawal/Desktop/Columbia MS/Spring 2021/Data Vis/the-carbon-implication-of-crypto/client/src/bitcoin-img.jpeg';
-import MiningImg from '/Users/ravishrawal/Desktop/Columbia MS/Spring 2021/Data Vis/the-carbon-implication-of-crypto/client/src/crypto-mining-img.jpeg';
-import BlockchainImg from '/Users/ravishrawal/Desktop/Columbia MS/Spring 2021/Data Vis/the-carbon-implication-of-crypto/client/src/blockchain-img.jpeg';
+import BenefitsTable from './BenefitsTable.png';
+import BitcoinImg from './bitcoin-img.jpeg';
+import MiningImg from './crypto-mining-img.jpeg';
+import BlockchainImg from './blockchain-img.jpeg';
+import {colors} from './theme.js';
 
 // ADD YOUR VIZ COMPONENT HERE. ARRAY MUST BE SAME LENGTH AS TEXT CONTENT ARRAY. 
 // IF YOU WANT IT TO PERSIST FOR MORE THAN 1 TEXT BLOCK THEN REPEAT IT
@@ -23,12 +26,13 @@ const vizContent = [
                       <img src={BitcoinImg} />,
                       <VolumeGraph/>,
                       <PriceGraph/>,
-                      <RenewableGraph/>,
-                      <RenewableGraph/>,
+                      '',
+                      '',
+                      <BarChartTs/>,
                       <HashRateGraph/>,
                       <EnergyHashRateGraph/>,
-                      <RenewableGraph/>,
-                      <RenewableGraph/>,
+                      '',
+                      <BarChartNoPoW/>,
                       <RenewableGraph/>,
                       <RenewableGraph/>,
                       <RenewableGraph/>,
@@ -54,7 +58,7 @@ const styles = {
     },
   },
   sectionBreak: {
-    background: 'green',
+    background: colors.cryptoblue,
     height: sectionHeight+'vh'
   },
   sectionTitle: {
@@ -88,7 +92,6 @@ const styles = {
     width: '100%',
     height: '60vh',
     top: '20vh',
-    backgroundColor: '#aaa',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -159,11 +162,11 @@ class Scrolly extends PureComponent {
 
   render() {
     const { data, steps, progress, text, viz } = this.state;
-    const { classes, slice } = this.props;
+    const { classes, slice, background } = this.props;
     const startSlice = slice[0]
     const endSlice = slice[1]
     return (
-      <div>
+      <div style={{ background: background }}>
         <p className={classes.pageSubtitle}>Scroll ↓</p>
         {/*Container for entire scrollytelling*/}
         <div className={classes.graphicContainer}>
@@ -175,7 +178,6 @@ class Scrolly extends PureComponent {
               progress
               onStepProgress={this.onStepProgress}
               offset={0.5}
-              debug
             >
               {steps.slice(startSlice,endSlice).map(value => {
                 const isVisible = value === data;

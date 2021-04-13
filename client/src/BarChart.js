@@ -2,6 +2,7 @@ import {Component} from 'react';
 import {VictoryChart, VictoryLine,VictoryBar, VictoryTheme, VictoryLabel, VictoryLegend,VictoryAxis} from 'victory';
 import algo_data from './algo_data.js';
 import './App.css';
+import custom_theme from './theme.js'
 
 class BarChart extends Component {
 	constructor(){
@@ -20,8 +21,8 @@ class BarChart extends Component {
 						algo_data && 
 						<div>
 							<VictoryChart
-							  	theme={VictoryTheme.material}
-							  minDomain={{ y: 1 }}
+							  	theme={custom_theme}
+							  	minDomain={{ y: 1 }}
 							  // maxDomain={{ y: 6000 }}
 								domainPadding={20}
 								padding={{ top: 20, bottom: 100, left:50, right:10 }}
