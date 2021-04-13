@@ -1,39 +1,26 @@
 import React, { PureComponent } from 'react';
 import injectSheet from 'react-jss';
 import { Scrollama, Step } from 'react-scrollama';
-import RenewableGraph from './RenewableGraph.js'
-import PriceGraph from './PriceGraph.js'
-import VolumeGraph from './VolumeGraph.js'
-import HashRateGraph from './HashRateGraph.js'
+import RenewableGraph from './RenewableGraph.js';
+import PriceGraph from './PriceGraph.js';
+import VolumeGraph from './VolumeGraph.js';
+import HashRateGraph from './HashRateGraph.js';
 import EnergyHashRateGraph from './EnergyHashRateGraph.js'
-
-// ADD YOUR TEXT HERE
-const textContent = [
-                      'The Carbon Implication Of Crypto',
-                      'What Is Crypto',
-                      'What Is Crypto 2',
-                      'The last x years have shown an incredible rise in adoption...',
-                      'and price',
-                      'Bitcoin consumes as much energy as 1,000 plane rides yearly...',
-                      'and as much as the entire XX industry as a whole.',
-                      'hash rate',
-                      'hash rate vs energy',
-                      '<h5>Despite a rising rate of renewable adoption, the future looks bleak</h5>',
-                      'And not necessarily to the noblest end',
-                      'We need to establish policies that leverage the benefits of cryptocurrency while looking out for the environment. Here’s what we can do:',
-                      "<h5>Apply lower bounds on algorithm efficiency:</h5> Bitcoin consumes an immense amount of energy, but only makes up 80% of the market cap and is actually more energy efficient than a lot of its counterparts. This is because it uses a SHA-256 hash algorithm, which cryptocurrencies like Monero and Dogecoin do not support, rendering them magnitudes more energy intensive.",
-                      "<h5>Move away from proof-of-work models:</h5> These reward greater computing power and encourage. Bitcoin is one of the more efficient proof-of-work coins out there, but there are proof-of-stake alternatives like Tezos that consume on the order of a million times less energy.",
-                      "<h5>Very carefully consider worthwhile use cases for Bitcoin:</h5> While companies are trying to remain trendy by accepting Bitcoin payments today, a single Bitcoin transaction consumes ~ 821kWH of energy. With ~369 billion credit card transactions per year (as of 2018), and rising this would mean 303 trillion kWh/year, 100x that of the US total energy consumption/year.",
-                      "<h5>We need better regulation.</h5>"
-                    ]
+import {scrollyContent as textContent} from './textContent.js';
+import BenefitsTable from '/Users/ravishrawal/Desktop/Columbia MS/Spring 2021/Data Vis/the-carbon-implication-of-crypto/client/src/BenefitsTable.png';
+import BitcoinImg from '/Users/ravishrawal/Desktop/Columbia MS/Spring 2021/Data Vis/the-carbon-implication-of-crypto/client/src/bitcoin-img.jpeg';
+import MiningImg from '/Users/ravishrawal/Desktop/Columbia MS/Spring 2021/Data Vis/the-carbon-implication-of-crypto/client/src/crypto-mining-img.jpeg';
+import BlockchainImg from '/Users/ravishrawal/Desktop/Columbia MS/Spring 2021/Data Vis/the-carbon-implication-of-crypto/client/src/blockchain-img.jpeg';
 
 // ADD YOUR VIZ COMPONENT HERE. ARRAY MUST BE SAME LENGTH AS TEXT CONTENT ARRAY. 
 // IF YOU WANT IT TO PERSIST FOR MORE THAN 1 TEXT BLOCK THEN REPEAT IT
 
 const vizContent = [
-                      <RenewableGraph/>,
-                      <RenewableGraph/>,
-                      <RenewableGraph/>,
+                      <img src={BenefitsTable} />,
+                      '',
+                      <img src={MiningImg} />,
+                      <img src={BlockchainImg} />,
+                      <img src={BitcoinImg} />,
                       <VolumeGraph/>,
                       <PriceGraph/>,
                       <RenewableGraph/>,

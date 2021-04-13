@@ -4,7 +4,7 @@
 }
 
 
-.Graph {
+/*.Graph {
   background-color: #282c34;
   width: inherit;
   height: inherit;
@@ -15,7 +15,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+}*/
 
 .ScrollStep {
   height: 100vh;

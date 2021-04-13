@@ -2,6 +2,7 @@ import {Component} from 'react';
 import {VictoryChart, VictoryLine, VictoryTheme, VictoryLabel, VictoryLegend} from 'victory';
 import data from './data.js';
 import './App.css';
+import custom_theme from './theme.js'
 
 class RenewableGraph extends Component {
 	constructor(){
@@ -18,7 +19,7 @@ class RenewableGraph extends Component {
 						data && 
 						<div className="Graph">
 							<VictoryChart
-							  theme={VictoryTheme.material}
+							  theme={custom_theme}
 							  minDomain={{ y: 0 }}
 							  maxDomain={{ y: 6000 }}
 							  width={450}
