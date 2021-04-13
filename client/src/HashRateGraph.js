@@ -2,6 +2,7 @@ import {Component} from 'react';
 import {VictoryChart, VictoryLine, VictoryTheme, VictoryLabel, VictoryLegend} from 'victory';
 import data from './bitcoin_hashrate_data.js';
 import './App.css';
+import custom_theme from './theme.js';
 
 class HashRateGraph extends Component {
 	constructor(){
@@ -18,7 +19,7 @@ class HashRateGraph extends Component {
 						data && 
 						<div className="Graph">
 							<VictoryChart
-							  theme={VictoryTheme.material}
+							  theme={custom_theme}
 							  minDomain={{ y: 0 }}
 							  maxDomain={{ y: 160000000 }}
 							  width={450}

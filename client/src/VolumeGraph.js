@@ -2,6 +2,7 @@ import {Component} from 'react';
 import {VictoryChart, VictoryLine, VictoryTheme, VictoryLabel, VictoryLegend, VictoryAxis} from 'victory';
 import data from './bitcoin_volume_data.js';
 import './App.css';
+import custom_theme from './theme.js';
 
 class VolumeGraph extends Component {
 	constructor(){
@@ -18,13 +19,12 @@ class VolumeGraph extends Component {
 						data && 
 						<div className="Graph">
 							<VictoryChart
-							  theme={VictoryTheme.material}
+							  theme={custom_theme}
 							  minDomain={{ y: 0 }}
 							  maxDomain={{ y: 1000000000 }}
 							  width={450}
 							>
 								<VictoryLabel 
-									text="Volume of Cryptocurrency" 
 									x={225} 
 									y={30} 
 									textAnchor="middle"
@@ -35,13 +35,14 @@ class VolumeGraph extends Component {
 								<VictoryLegend x={50} y={45}
 								  orientation="vertical"
 								  gutter={20}
+								  theme={custom_theme}
 								  data={[
-								    { name: "Cryptocurrency", symbol: { fill: "#c43a31" } }
+								    { name: "Trading Volume of Bitcoin" }
 								  ]}
 								/>
 								<VictoryLine
+									theme={custom_theme}
 								    style={{
-								      data: { stroke: "#c43a31" },
 								      parent: { border: "1px solid #ccc"}
 								    }}
 								    data={data}

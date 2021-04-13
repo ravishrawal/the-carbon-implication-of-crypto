@@ -1,26 +1,35 @@
 // Colors
 
-const yellow200 = "#FFF59D";
-const deepOrange600 = "#F4511E";
-const lime300 = "#DCE775";
-const lightGreen500 = "#8BC34A";
-const teal700 = "#00796B";
-const cyan900 = "#006064";
+const cryptoblue = "#0070EE"
+const cryptolightgreen = "#DAECE2"
+const cryptolightblue = "#C9E5FE"
+const cryptopurple = "#9A9AF8"
+const cryptocream = "#E5E5E5"
+const cryptogrey = "#8A8A8F"
+const cryptoblack = "#000000"
 const colors = [
-  deepOrange600,
-  yellow200,
-  lime300,
-  lightGreen500,
-  teal700,
-  cyan900
+  cryptoblue,
+  cryptolightgreen,
+  cryptolightblue,
+  cryptopurple,
+  cryptocream,
+  cryptogrey,
+  cryptoblack
 ];
-const blueGrey50 = "#ECEFF1";
-const blueGrey300 = "#90A4AE";
-const blueGrey700 = "#455A64";
-const grey900 = "#212121";
+
+const colors_obj = {
+  cryptoblue,
+  cryptolightgreen,
+  cryptolightblue,
+  cryptopurple,
+  cryptocream,
+  cryptogrey,
+  cryptoblack
+};
 
 // Typography
 const sansSerif = "'Helvetica Neue', 'Helvetica', sans-serif";
+const roboto = "Roboto Light";
 const letterSpacing = "normal";
 const fontSize = 12;
 
@@ -30,16 +39,16 @@ const baseProps = {
   width: 350,
   height: 350,
   padding: 50,
-  fill: deepOrange600
+  fill: cryptolightgreen
 };
 
 // * Labels
 const baseLabelStyles = {
-  fontFamily: sansSerif,
+  fontFamily: roboto,
   fontSize,
   letterSpacing,
   padding,
-  fill: blueGrey700,
+  fill: cryptogrey,
   stroke: "transparent",
   strokeWidth: 0
 };
@@ -53,34 +62,25 @@ const strokeLinejoin = "round";
 
 // Put it all together...
 const theme = {
-  area: Object.assign(
-    {
-      style: {
-        data: {
-          fill: grey900
-        },
-        labels: baseLabelStyles
-      }
-    },
-    baseProps
-  ),
   axis: Object.assign(
     {
       style: {
         axis: {
           fill: "transparent",
-          stroke: blueGrey300,
+          stroke: cryptogrey,
           strokeWidth: 2,
           strokeLinecap,
           strokeLinejoin
         },
         axisLabel: Object.assign({}, centeredLabelStyles, {
           padding,
-          stroke: "transparent"
+          stroke: "transparent",
+          fontSize:6
+
         }),
         grid: {
           fill: "none",
-          stroke: blueGrey50,
+          stroke: cryptoblack,
           strokeWidth:0,
           strokeDasharray,
           strokeLinecap,
@@ -90,13 +90,13 @@ const theme = {
         ticks: {
           fill: "transparent",
           size: 5,
-          stroke: blueGrey300,
+          stroke: cryptogrey,
           strokeWidth: 1,
           strokeLinecap,
           strokeLinejoin
         },
         tickLabels: Object.assign({}, baseLabelStyles, {
-          fill: blueGrey700
+          fill: cryptogrey
         })
       }
     },
@@ -115,44 +115,11 @@ const theme = {
     {
       style: {
         data: {
-          fill: blueGrey700,
+          fill: cryptopurple,
           padding,
           strokeWidth: 0
         },
         labels: baseLabelStyles
-      }
-    },
-    baseProps
-  ),
-  boxplot: Object.assign(
-    {
-      style: {
-        max: { padding, stroke: blueGrey700, strokeWidth: 1 },
-        maxLabels: Object.assign({}, baseLabelStyles, { padding: 3 }),
-        median: { padding, stroke: blueGrey700, strokeWidth: 1 },
-        medianLabels: Object.assign({}, baseLabelStyles, { padding: 3 }),
-        min: { padding, stroke: blueGrey700, strokeWidth: 1 },
-        minLabels: Object.assign({}, baseLabelStyles, { padding: 3 }),
-        q1: { padding, fill: blueGrey700 },
-        q1Labels: Object.assign({}, baseLabelStyles, { padding: 3 }),
-        q3: { padding, fill: blueGrey700 },
-        q3Labels: Object.assign({}, baseLabelStyles, { padding: 3 })
-      },
-      boxWidth: 20
-    },
-    baseProps
-  ),
-  candlestick: Object.assign(
-    {
-      style: {
-        data: {
-          stroke: blueGrey700
-        },
-        labels: Object.assign({}, baseLabelStyles, { padding: 5 })
-      },
-      candleColors: {
-        positive: "#ffffff",
-        negative: blueGrey700
       }
     },
     baseProps
@@ -162,24 +129,9 @@ const theme = {
       borderWidth: 8,
       style: {
         data: {
-          fill: deepOrange600,
+          fill: cryptogrey,
           opacity: 1,
-          stroke: blueGrey700,
-          strokeWidth: 2
-        },
-        labels: baseLabelStyles
-      }
-    },
-    baseProps
-  ),
-  errorbar: Object.assign(
-    {
-      borderWidth: 8,
-      style: {
-        data: {
-          fill: "transparent",
-          opacity: 1,
-          stroke: blueGrey700,
+          stroke: cryptolightgreen,
           strokeWidth: 2
         },
         labels: baseLabelStyles
@@ -197,8 +149,8 @@ const theme = {
     {
       style: {
         data: {
-          fill: blueGrey700,
-          stroke: grey900,
+          fill: cryptolightgreen,
+          stroke: cryptoblue,
           strokeWidth: 2
         },
         labels: baseLabelStyles
@@ -213,7 +165,8 @@ const theme = {
     titleOrientation: "top",
     style: {
       data: {
-        type: "circle"
+        type: "circle",
+        fill: cryptopurple
       },
       labels: baseLabelStyles,
       title: Object.assign({}, baseLabelStyles, { padding: 5 })
@@ -225,36 +178,8 @@ const theme = {
         data: {
           fill: "transparent",
           opacity: 1,
-          stroke: blueGrey700,
+          stroke: cryptopurple,
           strokeWidth: 2
-        },
-        labels: baseLabelStyles
-      }
-    },
-    baseProps
-  ),
-  pie: Object.assign(
-    {
-      colorScale: colors,
-      style: {
-        data: {
-          padding,
-          stroke: blueGrey50,
-          strokeWidth: 1
-        },
-        labels: Object.assign({}, baseLabelStyles, { padding: 20 })
-      }
-    },
-    baseProps
-  ),
-  scatter: Object.assign(
-    {
-      style: {
-        data: {
-          fill: blueGrey700,
-          opacity: 1,
-          stroke: "transparent",
-          strokeWidth: 0
         },
         labels: baseLabelStyles
       }
@@ -266,38 +191,9 @@ const theme = {
       colorScale: colors
     },
     baseProps
-  ),
-  tooltip: {
-    style: Object.assign({}, baseLabelStyles, { padding: 0, pointerEvents: "none" }),
-    flyoutStyle: {
-      stroke: grey900,
-      strokeWidth: 1,
-      fill: "#f0f0f0",
-      pointerEvents: "none"
-    },
-    flyoutPadding: 5,
-    cornerRadius: 5,
-    pointerLength: 10
-  },
-  voronoi: Object.assign(
-    {
-      style: {
-        data: {
-          fill: "transparent",
-          stroke: "transparent",
-          strokeWidth: 0
-        },
-        labels: Object.assign({}, baseLabelStyles, { padding: 5, pointerEvents: "none" }),
-        flyout: {
-          stroke: grey900,
-          strokeWidth: 1,
-          fill: "#f0f0f0",
-          pointerEvents: "none"
-        }
-      }
-    },
-    baseProps
   )
 };
 
 export default theme;
+
+export {colors_obj as colors}

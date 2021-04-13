@@ -2,6 +2,7 @@ import {Component} from 'react';
 import {VictoryChart, VictoryLine,VictoryBar, VictoryTheme, VictoryLabel, VictoryLegend,VictoryAxis,VictoryZoomContainer} from 'victory';
 import algo_energy_data from './algo_energy_data.js';
 import './App.css';
+import custom_theme from './theme.js';
 
 class BarChartNoPoW extends Component {
 	constructor(){
@@ -31,9 +32,9 @@ class BarChartNoPoW extends Component {
 						algo_energy_data && 
 						<div>
 							<VictoryChart
-							  	theme={VictoryTheme.material}
-							  minDomain={{ y: 1 }}
-							  maxDomain={{ y: 1e12 }}
+							  	theme={custom_theme}
+							  	minDomain={{ y: 1 }}
+							  	maxDomain={{ y: 1e12 }}
 								domainPadding={20}
 								padding={{ top: 20, bottom: 100, left:50, right:10 }}
 								width={200}
