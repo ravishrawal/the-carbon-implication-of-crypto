@@ -14,12 +14,12 @@ function App() {
       <header className="App-header">
       </header>
       <TitleScreen title={"The environmental impact of cryptocurrency"} subtitle="exploring the energy consumption of Bitcoin and other cryptocurrencies" textColor='black'/>
-      <SectionScreen title="What is cryptocurrency?" text={titleContent[0]} textColor={colors.cryptoblack} backgroundColor={colors.cryptoblue}/>
-      <Scrolly slice={[0, 1]} background={colors.cryptoblack}/>
-      <Scrolly slice={[1, 5]} background={colors.cryptocream}/>
-      <Scrolly slice={[5, 7]} background={colors.cryptoblack}/>
+      <SectionScreen title="What is cryptocurrency?" text={titleContent[0]} textColor='white' backgroundColor={colors.cryptoblue}/>
+      <Scrolly slice={[0, 4]} background={colors.cryptocream}/>
+      <Scrolly slice={[4, 6]} background={colors.cryptoblack}/>
       <SectionScreen title={"But Let's Gain Some Perspective"} textColor={colors.cryptolightgreen} backgroundColor={colors.cryptogrey}/>
-      <Scrolly slice={[7, 14]} background={colors.cryptoblack}/>
+      <Scrolly slice={[6, 11]} background={colors.cryptoblack}/>
+      <Scrolly slice={[11, 14]} background={colors.cryptocream}/>
     </div>
   );
 }

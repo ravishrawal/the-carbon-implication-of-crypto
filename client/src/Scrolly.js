@@ -25,7 +25,6 @@ import {colors} from './theme.js';
 // IF YOU WANT IT TO PERSIST FOR MORE THAN 1 TEXT BLOCK THEN REPEAT IT
 
 const vizContent = [
-                      <img src={BenefitsTable} />,
                       '',
                       <img src={MiningImg} />,
                       <img src={BlockchainImg} />,
