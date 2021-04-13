@@ -141,7 +141,7 @@ for (let i = 2022; i <= 2030; i++) {
   for (let j = 0; j < jsonOutput["BTC"].length; j++) {
     if (i == jsonOutput["BTC"][j][0]) {
       let nextYearEnergy = jsonOutput["BTC"][j][1];
-      console.log(jsonOutput["BTC"][j][0], "wow");
+      // console.log(jsonOutput["BTC"][j][0], "wow");
       let thisYearRenewableData = { x: i, y: renewableEE };
       let thisYearfossilData = { x: i, y: nextYearEnergy - renewableEE };
       jsonOutput["BTCrenewable"].push(thisYearRenewableData);
@@ -152,18 +152,35 @@ for (let i = 2022; i <= 2030; i++) {
       break;
     }
   }
+}
 
-  // console.log(nextYearEnergy);
-  // let nextYearEnergyR = 0.5 * nextYearEnergy;
-  // let thisYearRenewableData = { x: 2021, y: nextYearEnergyR };
-  // let thisYearfossilData = { x: 2021, y: nextYearEnergy - nextYearEnergyR };
-  // jsonOutput["BTCrenewable"].push(thisYearRenewableData);
-  // jsonOutput["BTCfossil"].push(thisYearfossilData);
-  // let prevYearEnergy = jsonOutput["BTC"][jsonOutput["BTC"].length - 1][1];
-  // let nextYearEnergy = 0.43 * prevYearEnergy + prevYearEnergy;
-  // let el = { x: String(i), y: nextYearEnergy };
-  //  jsonOutput["BTCrenewable"].push(el);
-  //console.log("prevYearEnergy", prevYearEnergy);
+renewableEE = 0.39 * 117.5;
+for (let i = 2020; i >= 2015; i--) {
+  renewableEE = renewableEE - 0.05 * renewableEE;
+
+  // search for the year
+  for (let j = 0; j < jsonOutput["BTC"].length; j++) {
+    if (i == jsonOutput["BTC"][j][0]) {
+      let nextYearEnergy = jsonOutput["BTC"][j][1];
+      // console.log(jsonOutput["BTC"][j][0], "wow");
+      let thisYearRenewableData = { x: i, y: renewableEE };
+      let thisYearfossilData = { x: i, y: nextYearEnergy - renewableEE };
+      if (i >= 2018) {
+        jsonOutput["BTCrenewable"].unshift(thisYearRenewableData);
+        jsonOutput["BTCfossil"].unshift(thisYearfossilData);
+      } else {
+        // thisYearfossilData = { x: i, y: nextYearEnergy - renewableEE };
+        thisYearRenewableData = { x: i, y: nextYearEnergy * 0.05 };
+        thisYearfossilData = { x: i, y: nextYearEnergy * 0.95 };
+        jsonOutput["BTCfossil"].unshift(thisYearfossilData);
+        jsonOutput["BTCrenewable"].unshift(thisYearRenewableData);
+      }
+
+      // console.log("miss", i, jsonOutput["BTC"][j][1], renewableEE);
+
+      break;
+    }
+  }
 }
 
 // console.log(jsonOutput);

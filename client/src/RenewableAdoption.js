@@ -5,6 +5,7 @@ import {
   VictoryStack,
   VictoryBar,
   VictoryTheme,
+  VictoryLegend,
 } from "victory";
 import barChar from "./barCharData.js";
 import "./App.css";
@@ -50,7 +51,25 @@ class RenewableAdoption extends Component {
               domainPadding={{ x: 30, y: 20 }}
               theme={VictoryTheme.material}
             >
-              <VictoryStack colorScale={["tomato", "green"]}>
+              <VictoryLegend
+                x={50}
+                y={45}
+                orientation="vertical"
+                gutter={20}
+                data={[
+                  {
+                    name: "Renewables",
+                    symbol: { fill: "#2FA453" },
+                    labels: { fill: "white" },
+                  },
+                  {
+                    name: "Fossil Fuels ",
+                    symbol: { fill: "#c43a31" },
+                    labels: { fill: "white" },
+                  },
+                ]}
+              />
+              <VictoryStack colorScale={["#c43a31", "#2FA453"]}>
                 {dataset.map((data, i) => {
                   return (
                     <VictoryBar
