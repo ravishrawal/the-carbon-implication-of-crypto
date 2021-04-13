@@ -2,14 +2,14 @@ import {Component} from 'react';
 import {VictoryChart, VictoryLine,VictoryBar, VictoryTheme, VictoryLabel, VictoryLegend,VictoryAxis,VictoryZoomContainer} from 'victory';
 import algo_energy_data from './algo_energy_data.js';
 import './App.css';
-import custom_theme from './theme.js';
+import custom_theme,{colors} from './theme.js';
 
 class BarChartNoPoW extends Component {
 	constructor(){
 		super();
 		console.log(algo_energy_data)
 		this.state={
-			algo_energy_data: [algo_energy_data[0]]
+			algo_energy_data: [algo_energy_data[0],{algo:'PoS', energy:1}]
 		}
 	}
 	componentDidMount(){
@@ -40,13 +40,6 @@ class BarChartNoPoW extends Component {
 								width={200}
 								height={200}
 								scale={{x:"linear",y:"log"}}
-								containerComponent={
-									<VictoryZoomContainer
-									// zoomDomain = {{y:[0,0.20]}}
-									zoomDimension="y"
-									/>
-
-								}
 								animate={{
 									duration:1000,
 									easing: "linear"
@@ -54,28 +47,32 @@ class BarChartNoPoW extends Component {
 
 							>
 								<VictoryLabel 
-									text="Energy Consumption of PoW vs Non-PoW Currencies" 
-									x={100} 
+									text="Energy Consumption of PoW vs PoS Currencies" 
+									theme={custom_theme}
+									x={120} 
 									y={10} 
 									textAnchor="middle"
 									style={[
-								        { fill: "white",
-								          fontSize: 8
+								        { 
+								          	fontSize:6,
+								          	fontFamily: "Helvetica",
+								          	fill:colors.cryptocream
 								        }
 								        ]}
 								/>
 								<VictoryAxis
 									dependentAxis
+									theme={custom_theme}
 									label = {()=>{
-										var l = "Log(Enegy Cons.)\n(Joules)"
+										var l = "log(Energy Cons.) (J)"
 										return l
 										}	
 									}
 									// tickValues= {[0,1e0,1e5,1e10]}
 									tickFormat={(y) => (`${y.toExponential()} `)}
 									style={{
-									axis: {stroke: "#756f6a"},
-									axisLabel: {fontSize: 6, padding: 32, angle: 270},
+									// axis: {stroke: "#756f6a"},
+									axisLabel: {fontSize: 4, padding: 17, angle: 270},
 									// grid: {stroke: ({ tick }) => tick > 0.5 ? "red" : "grey"},
 									// ticks: {stroke: "grey", size: 5},
 									tickLabels: {fontSize: 5, padding: 0}
@@ -107,16 +104,24 @@ class BarChartNoPoW extends Component {
 								    barWidth={25}
 								    sortKey="y"
 								    sortOrder="descending"
+								    theme={custom_theme}
 								    labels={true}
 								    labelComponent={
 								    	<VictoryLabel
-								    	text={({ datum }) => `${datum.energy.toExponential()}`}
+								    	text={({ datum }) => `${Math.round(datum.energy).toExponential()}`}
 								    	style={[{
-								    		fontSize:6
+								    		fontSize: 6,
+								    		fill: colors.cryptogrey,
 								    	}]}
 								    	/>
 								    }
-
+								    animate={{
+										duration: 1500,
+										onLoad:{
+											before: (datum)=>{datum._y=1}	
+										}
+										
+									}}
 								    // sortOrder = "ascending"
 								/>	
 							</VictoryChart>

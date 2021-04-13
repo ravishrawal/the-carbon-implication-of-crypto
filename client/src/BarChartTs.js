@@ -10,22 +10,30 @@ class BarChartTs extends Component {
 		super();
 		console.log(transaction_data)
 		this.state={
-			transaction_data: [transaction_data[1]]
+			transaction_data: [{transaction:'BTC', energy_wh:0},transaction_data[1]]
 		}
+		// this.renderBitcoin = this.renderBitcoin.bind(this)
 	}
 	componentDidMount(){
 		this.setStateInterval = window.setInterval(() => {
 	      this.setState({
 	        transaction_data: transaction_data
 	      });
-	    }, 3000);
+	    }, 5000);
 	}
+	// renderBitcoin(){
+	// 	console.log('renderBitcoin')
+ //      this.setState({
+ //        transaction_data: transaction_data
+ //      });
+	// }
 
   // componentWillUnmount() {
   //   window.clearInterval(this.setStateInterval);
   // }
 	render(){
 		const {transaction_data, bar_data} = this.state;
+		const {renderBitcoin} = this;
 		// console.log("RG data:", data)
 		return (
 				<div style={{height:"inherit", width: "inherit"}}>
@@ -41,15 +49,9 @@ class BarChartTs extends Component {
 								width={200}
 								height={200}
 								// scale={{x:"linear",y:"log"}}
-								containerComponent={
-									<VictoryZoomContainer
-									// zoomDomain = {{y:[0,0.20]}}
-									zoomDimension="y"
-									/>
 
-								}
 								animate={{
-									duration:1000,
+									duration:3000,
 									easing: "quadInOut"
 								}}
 
@@ -110,7 +112,7 @@ class BarChartTs extends Component {
 								      // parent: { border: "1px solid #ccc"}
 								    }}
 								    barWidth={25}
-								    sortKey="y"
+								    // sortKey="y"
 								    labels={true}
 								    labelComponent={
 								    	<VictoryLabel
