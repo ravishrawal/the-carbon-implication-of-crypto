@@ -44,7 +44,7 @@ const baseProps = {
 
 // * Labels
 const baseLabelStyles = {
-  fontFamily: roboto,
+  fontFamily: 'Roboto',
   fontSize,
   letterSpacing,
   padding,
