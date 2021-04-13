@@ -34,7 +34,7 @@ const letterSpacing = "normal";
 const fontSize = 12;
 
 // Layout
-const padding = 8;
+const padding = 1;
 const baseProps = {
   width: 350,
   height: 350,
@@ -76,7 +76,6 @@ const theme = {
           padding,
           stroke: "transparent",
           fontSize:6
-
         }),
         grid: {
           fill: "none",

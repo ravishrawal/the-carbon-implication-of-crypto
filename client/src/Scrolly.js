@@ -5,11 +5,13 @@ import RenewableGraph from './RenewableGraph.js';
 import PriceGraph from './PriceGraph.js';
 import VolumeGraph from './VolumeGraph.js';
 import HashRateGraph from './HashRateGraph.js';
-import EnergyHashRateGraph from './EnergyHashRateGraph.js'
+import EnergyHashGraph from './EnergyHashGraph.js'
+import BarChart from './BarChart.js'
 import BarChartTs from './BarChartTs.js'
 import BarChartNoPoW from './BarChartNoPoW.js'
 import BitcoinComparissonGraph from "./BitcoinComparissonGraph";
 import BitcoinComparissonGraph2 from "./BitcoinComparissonGraph2";
+import RenewableAdoption from "./RenewableAdoption";
 import {scrollyContent as textContent} from './textContent.js';
 
 import BenefitsTable from './BenefitsTable.png';
@@ -31,14 +33,14 @@ const vizContent = [
                       <img src={BitcoinImg} />,
                       <VolumeGraph/>,
                       <PriceGraph/>,
-                      '',
-                      '',
+                      < BitcoinComparissonGraph/>,
+                      < BitcoinComparissonGraph2/>,
                       <BarChartTs/>,
                       <HashRateGraph/>,
-                      <EnergyHashRateGraph/>,
-                      '',
+                      <EnergyHashGraph/>,
+                      <RenewableAdoption/>,
                       <BarChartNoPoW/>,
-                      <RenewableGraph/>,
+                      <BarChart/>,
                       <RenewableGraph/>,
                       <RenewableGraph/>,
                       <RenewableGraph/>,
