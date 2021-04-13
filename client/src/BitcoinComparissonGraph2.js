@@ -1,5 +1,12 @@
 import { Component } from "react";
-import { VictoryChart, VictoryTheme, VictoryLabel, VictoryBar } from "victory";
+import {
+  VictoryChart,
+  VictoryTheme,
+  VictoryLabel,
+  VictoryBar,
+  VictoryAxis,
+  VictoryLegend,
+} from "victory";
 import data from "./data.js";
 import "./App.css";
 
@@ -18,17 +25,31 @@ class BitcoinComparissonGraph extends Component {
         {data && (
           <div className="Graph">
             <VictoryChart
+              domainPadding={20}
               theme={VictoryTheme.material}
               minDomain={{ y: 0 }}
               maxDomain={{ y: 270 }}
               width={450}
             >
               <VictoryLabel
-                text="Energy Consumtion comparison (twh)"
+                text="Energy Consumtion comparison "
                 x={225}
                 y={30}
                 textAnchor="middle"
                 style={[{ fill: "white" }]}
+              />
+              <VictoryLegend
+                x={70}
+                y={80}
+                orientation="vertical"
+                gutter={20}
+                data={[
+                  {
+                    name: "Terawatt-hour",
+                    symbol: { fill: "#9a9af8" },
+                    labels: { fill: "white" },
+                  },
+                ]}
               />
 
               <VictoryBar
@@ -38,7 +59,7 @@ class BitcoinComparissonGraph extends Component {
                 }}
                 barWidth={({ index }) => index * 2 + 8}
                 style={{
-                  data: { fill: "#c43a31" },
+                  data: { fill: "#9a9af8" },
                 }}
                 data={[
                   { x: "U.S\n Beverage \n 2018", y: 32.34 },
@@ -52,6 +73,32 @@ class BitcoinComparissonGraph extends Component {
                   //   y: 268.8,
                   // },
                 ]}
+              />
+              <VictoryAxis
+                dependentAxis
+                tickFormat={(tick) => `${tick} twh`}
+                style={{
+                  axisLabel: { fontSize: 12, padding: 35 },
+                  grid: { strokeWidth: 0 },
+                  tickLabels: {
+                    fill: "#e5e5e5",
+                  },
+                  axis: {
+                    stroke: "#e5e5e5", //CHANGE COLOR OF X-AXIS
+                  },
+                }}
+              />
+              <VictoryAxis
+                style={{
+                  axisLabel: { fontSize: 12, padding: 30 },
+                  grid: { strokeWidth: 0 },
+                  tickLabels: {
+                    fill: "#e5e5e5",
+                  },
+                  axis: {
+                    stroke: "#e5e5e5", //CHANGE COLOR OF X-AXIS
+                  },
+                }}
               />
             </VictoryChart>
           </div>

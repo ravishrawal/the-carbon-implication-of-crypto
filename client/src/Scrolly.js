@@ -190,7 +190,7 @@ class Scrolly extends PureComponent {
               progress
               onStepProgress={this.onStepProgress}
               offset={0.5}
-              debug
+              // debug
             >
               {steps.slice(startSlice, endSlice).map((value) => {
                 const isVisible = value === data;

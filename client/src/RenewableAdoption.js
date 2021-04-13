@@ -6,11 +6,11 @@ import {
   VictoryBar,
   VictoryTheme,
   VictoryLegend,
+  VictoryLabel,
 } from "victory";
 import barChar from "./barCharData.js";
 import "./App.css";
 import myDataset from "./barCharData.js";
-import data from "./data.js";
 
 class RenewableAdoption extends Component {
   constructor() {
@@ -52,24 +52,32 @@ class RenewableAdoption extends Component {
               theme={VictoryTheme.material}
             >
               <VictoryLegend
-                x={50}
+                x={80}
                 y={45}
                 orientation="vertical"
                 gutter={20}
                 data={[
                   {
                     name: "Renewables",
-                    symbol: { fill: "#2FA453" },
+                    symbol: { fill: "#daece2" },
                     labels: { fill: "white" },
                   },
                   {
                     name: "Fossil Fuels ",
-                    symbol: { fill: "#c43a31" },
+                    symbol: { fill: "#9a9af8" },
                     labels: { fill: "white" },
                   },
                 ]}
               />
-              <VictoryStack colorScale={["#c43a31", "#2FA453"]}>
+              <VictoryLabel
+                text="Type of Energy Consumption"
+                x={305}
+                y={30}
+                textAnchor="middle"
+                style={[{ fill: "#e5e5e5" }]}
+              />
+
+              <VictoryStack colorScale={["#9a9af8", "#daece2"]}>
                 {dataset.map((data, i) => {
                   return (
                     <VictoryBar
@@ -83,12 +91,32 @@ class RenewableAdoption extends Component {
                   );
                 })}
               </VictoryStack>
-              <VictoryAxis dependentAxis tickFormat={(tick) => `${tick} twh`} />
               <VictoryAxis
+                dependentAxis
+                tickFormat={(tick) => `${tick} twh`}
+                style={{
+                  axisLabel: { fontSize: 12, padding: 30 },
+                  grid: { strokeWidth: 0 },
+                  tickLabels: {
+                    fill: "#e5e5e5",
+                  },
+                  axis: {
+                    stroke: "#e5e5e5", //CHANGE COLOR OF X-AXIS
+                  },
+                }}
+              />
+              <VictoryAxis
+                style={{
+                  axisLabel: { fontSize: 12, padding: 30 },
+                  grid: { strokeWidth: 0 },
+                  tickLabels: {
+                    fill: "#e5e5e5",
+                  },
+                  axis: {
+                    stroke: "#e5e5e5", //CHANGE COLOR OF X-AXIS
+                  },
+                }}
                 tickFormat={[
-                  "2015",
-                  "2016",
-                  "2017",
                   "2018",
                   "2019",
                   "2020",
