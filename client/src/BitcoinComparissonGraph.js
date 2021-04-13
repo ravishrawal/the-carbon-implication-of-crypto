@@ -1,5 +1,11 @@
 import { Component } from "react";
-import { VictoryChart, VictoryTheme, VictoryLabel, VictoryBar } from "victory";
+import {
+  VictoryChart,
+  VictoryTheme,
+  VictoryLabel,
+  VictoryBar,
+  VictoryAxis,
+} from "victory";
 import data from "./data.js";
 import "./App.css";
 
@@ -19,16 +25,18 @@ class BitcoinComparissonGraph extends Component {
           <div className="Graph">
             <VictoryChart
               theme={VictoryTheme.material}
+              domainPadding={20}
               minDomain={{ y: 0 }}
               maxDomain={{ y: 80 }}
               width={450}
+              style={[{ fill: "#e5e5e5" }]}
             >
               <VictoryLabel
                 text="2020 Energy Consumtion (twh)"
                 x={225}
                 y={30}
                 textAnchor="middle"
-                style={[{ fill: "white" }]}
+                style={[{ fill: "#e5e5e5" }]}
               />
 
               <VictoryBar
@@ -38,7 +46,7 @@ class BitcoinComparissonGraph extends Component {
                 }}
                 barWidth={({ index }) => index * 2 + 8}
                 style={{
-                  data: { fill: "#c43a31" },
+                  data: { fill: "#9a9af8", color: "#ffffff" },
                 }}
                 data={[
                   { x: "NYC \n Subway", y: 1.8 },
@@ -50,6 +58,19 @@ class BitcoinComparissonGraph extends Component {
                   },
                   { x: "Bitcoin\n 2020 energy", y: 70.39 },
                 ]}
+              />
+              <VictoryAxis
+                dependentAxis
+                style={{
+                  axisLabel: { fontSize: 12, padding: 35 },
+                  grid: { strokeWidth: 0 },
+                }}
+              />
+              <VictoryAxis
+                style={{
+                  axisLabel: { fontSize: 12, padding: 30 },
+                  grid: { strokeWidth: 0 },
+                }}
               />
             </VictoryChart>
           </div>
