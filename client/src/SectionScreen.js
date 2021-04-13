@@ -15,7 +15,9 @@ const styles = {
   },
   sectionText: {
     textAlign: 'center',
-    fontSize: 24
+    fontSize: 24,
+    margin:'auto',
+    width:'80%'
   },
 };
 

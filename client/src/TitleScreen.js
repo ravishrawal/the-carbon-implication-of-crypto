@@ -11,7 +11,8 @@ const styles = {
   },
   sectionTitle: {
     textAlign: 'center',
-    fontSize: 32,
+    fontSize: 72,
+    fontFamily: 'Roboto',
     padding: sectionHeight/2+"vh 0%"
   },
 };

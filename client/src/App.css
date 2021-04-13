@@ -20,3 +20,34 @@
 .ScrollStep {
   height: 100vh;
 }
+
+p .term-header{
+  font-family: 'Roboto';
+  margin-top: 0 !important;
+  padding:0 !important;
+  font-size:44px !important;
+  color:#8A8A8F !important;
+}
+
+p .term-content{
+  font-family: 'Roboto';
+  margin-top: 0 !important;
+  padding:0 !important;
+  font-size:32px !important;
+  color:#000000 !important;
+}
+
+
+p {
+  font-family: 'Roboto';
+  font-size:32px;
+  color:#000000;
+}
+
+h5 {
+  font-family: 'Roboto';
+  font-size:72px !important;
+  color:#8A8A8F;
+}
+
+

@@ -9,6 +9,7 @@ import {
 } from "victory";
 import data from "./data.js";
 import "./App.css";
+import theme, {colors} from "./theme.js";
 
 class BitcoinComparissonGraph extends Component {
   constructor() {
@@ -25,81 +26,62 @@ class BitcoinComparissonGraph extends Component {
         {data && (
           <div className="Graph">
             <VictoryChart
-              theme={VictoryTheme.material}
-              domainPadding={20}
+              theme={theme}
+              domainPadding={30}
               minDomain={{ y: 0 }}
               maxDomain={{ y: 80 }}
               width={450}
-              style={[{ fill: "#e5e5e5" }]}
             >
-              <VictoryLabel
-                text="2020 Energy Consumption "
-                x={225}
-                y={30}
-                textAnchor="middle"
-                style={[{ fill: "#e5e5e5" }]}
-              />
 
               <VictoryBar
+                theme={theme}
+                labels={true}
+                labelComponent={
+                  <VictoryLabel
+                  text={({ datum }) => `${Math.round(datum.y*100)/100}`}
+                  style={[{
+                    fontSize: 6,
+                    fill: colors.cryptogrey,
+                  }]}
+                  />
+                }
                 animate={{
                   duration: 3000,
                   onLoad: { duration: 3000 },
                 }}
-                barWidth={({ index }) => index * 2 + 8}
-                style={{
-                  data: { fill: "#9a9af8", color: "#ffffff" },
-                }}
+                barWidth={40}
                 data={[
-                  { x: "NYC \n Subway\n  per year", y: 1.8 },
+                  { x: "The Entire NYC\nSubway System\nFor A Year", y: 1.8 },
 
-                  { x: "1 million US \nhouseholds \n per year", y: 11 },
+                  { x: "1M US\nHouseholds\nFor A Year", y: 11.0 },
                   {
-                    x: "1 million flights \n from NYC to LA \n per year ",
+                    x: "1M Flights\nFrom NYC to LA",
                     y: 32.7,
                   },
-                  { x: "Bitcoin\n  activity \n per year", y: 70.39 },
+                  { x: "Bitcoin\nNetwork\nFor A Year", y: 70.4 },
                 ]}
               />
-
               <VictoryLegend
-                x={70}
-                y={80}
+              theme={theme}
+                x={50}
+                y={45}
                 orientation="vertical"
                 gutter={20}
                 data={[
                   {
-                    name: "Terawatt-hour",
-                    symbol: { fill: "#9a9af8" },
-                    labels: { fill: "white" },
-                  },
+                    name: "Energy Consumption (TWh)"
+                  }
                 ]}
+
               />
 
               <VictoryAxis
                 dependentAxis
-                tickFormat={(tick) => `${tick} twh`}
-                style={{
-                  axisLabel: { fontSize: 12, padding: 35 },
-                  grid: { strokeWidth: 0 },
-                  tickLabels: {
-                    fill: "#e5e5e5",
-                  },
-                  axis: {
-                    stroke: "#e5e5e5", //CHANGE COLOR OF X-AXIS
-                  },
-                }}
+                theme={theme}
+                tickFormat={(tick) => `${tick}`}
               />
               <VictoryAxis
-                style={{
-                  axisLabel: { fontSize: 12, padding: 30 },
-                  grid: { strokeWidth: 0 },
-                  tickLabels: {
-                    fill: "#e5e5e5",
-                  },
-                  axis: {
-                    stroke: "#e5e5e5", //CHANGE COLOR OF X-AXIS
-                  },
-                }}
+                theme={theme}
               />
             </VictoryChart>
           </div>
