@@ -8,14 +8,19 @@ import HashRateGraph from './HashRateGraph.js';
 import EnergyHashRateGraph from './EnergyHashRateGraph.js'
 import BarChartTs from './BarChartTs.js'
 import BarChartNoPoW from './BarChartNoPoW.js'
+import BitcoinComparissonGraph from "./BitcoinComparissonGraph";
+import BitcoinComparissonGraph2 from "./BitcoinComparissonGraph2";
 import {scrollyContent as textContent} from './textContent.js';
+
 import BenefitsTable from './BenefitsTable.png';
 import BitcoinImg from './bitcoin-img.jpeg';
 import MiningImg from './crypto-mining-img.jpeg';
 import BlockchainImg from './blockchain-img.jpeg';
+
 import {colors} from './theme.js';
 
-// ADD YOUR VIZ COMPONENT HERE. ARRAY MUST BE SAME LENGTH AS TEXT CONTENT ARRAY. 
+
+// ADD YOUR VIZ COMPONENT HERE. ARRAY MUST BE SAME LENGTH AS TEXT CONTENT ARRAY.
 // IF YOU WANT IT TO PERSIST FOR MORE THAN 1 TEXT BLOCK THEN REPEAT IT
 
 const vizContent = [
@@ -41,20 +46,19 @@ const vizContent = [
                    ]
 
 
-
-const sectionHeight = 100
+const sectionHeight = 100;
 
 const styles = {
   navbar: {
-    position: 'fixed',
-    display: 'flex',
+    position: "fixed",
+    display: "flex",
     top: 0,
     right: 0,
     zIndex: 1,
-    '& a': {
-      display: 'block',
-      fontSize: '20px',
-      padding: '20px',
+    "& a": {
+      display: "block",
+      fontSize: "20px",
+      padding: "20px",
     },
   },
   sectionBreak: {
@@ -62,29 +66,29 @@ const styles = {
     height: sectionHeight+'vh'
   },
   sectionTitle: {
-    textAlign: 'center',
+    textAlign: "center",
     fontSize: 32,
-    padding: sectionHeight/2+"vh 0%",
-    color: "white"
+    padding: sectionHeight / 2 + "vh 0%",
+    color: "white",
   },
   description: {
     maxWidth: 600,
-    margin: '10px auto 30px',
+    margin: "10px auto 30px",
     fontSize: 22,
-    lineHeight: '28px',
-    '& a': {
-      color: 'black',
+    lineHeight: "28px",
+    "& a": {
+      color: "black",
     },
   },
   pageSubtitle: {
-    textAlign: 'center',
+    textAlign: "center",
     fontSize: 22,
-    color: '#888',
+    color: "#888",
   },
   graphicContainer: {
-    padding: '40vh 2vw 20vh',
-    display: 'flex',
-    justifyContent: 'space-between',
+    padding: "40vh 2vw 20vh",
+    display: "flex",
+    justifyContent: "space-between",
   },
   graphic: {
     flexBasis: '60%',
@@ -98,39 +102,39 @@ const styles = {
     '& p': {
       fontSize: '5rem',
       fontWeight: 700,
-      textAlign: 'center',
-      color: '#fff',
+      textAlign: "center",
+      color: "#fff",
     },
   },
   scroller: {
-    flexBasis: '35%',
+    flexBasis: "35%",
   },
   step: {
-    margin: '0 auto 1rem auto',
-    padding: '180px 0',
-    height: '80vh',
-    '& p': {
-      textAlign: 'center',
-      padding: '1rem',
-      fontSize: '1.8rem',
-      marginTop: '75%',
+    margin: "0 auto 1rem auto",
+    padding: "180px 0",
+    height: "80vh",
+    "& p": {
+      textAlign: "center",
+      padding: "1rem",
+      fontSize: "1.8rem",
+      marginTop: "75%",
     },
-    '&:last-child': {
+    "&:last-child": {
       marginBottom: 0,
     },
   },
   textColor: {
-    color: 'white'
+    color: "white",
   },
   subhed: {
     maxWidth: 600,
-    margin: '10px auto 15px',
+    margin: "10px auto 15px",
     fontSize: 22,
-    lineHeight: '28px',
-    '& a': {
-      color: 'black',
+    lineHeight: "28px",
+    "& a": {
+      color: "black",
     },
-    textAlign: 'center',
+    textAlign: "center",
   },
 };
 
@@ -140,18 +144,18 @@ class Scrolly extends PureComponent {
     steps: [...Array(textContent.length).keys()],
     progress: 0,
     text: textContent[0],
-    viz: vizContent[0]
+    viz: vizContent[0],
   };
 
   onStepEnter = ({ data }) => {
-    var text = textContent[data]
-    var viz = vizContent[data]
+    var text = textContent[data];
+    var viz = vizContent[data];
     this.setState({ data, text, viz });
   };
 
   onStepExit = ({ direction, data }) => {
-    if (direction === 'up' && data === this.state.steps[0]) {
-      this.setState({ data: 0, text:'', viz:''});
+    if (direction === "up" && data === this.state.steps[0]) {
+      this.setState({ data: 0, text: "", viz: "" });
     }
   };
 
@@ -179,14 +183,12 @@ class Scrolly extends PureComponent {
               onStepProgress={this.onStepProgress}
               offset={0.5}
             >
-              {steps.slice(startSlice,endSlice).map(value => {
+              {steps.slice(startSlice, endSlice).map((value) => {
                 const isVisible = value === data;
                 return (
                   <Step data={value} key={value}>
-                    <div className={classes.step} >
-                      <p className={classes.textColor}>
-                        { text }
-                      </p>
+                    <div className={classes.step}>
+                      <p className={classes.textColor}>{text}</p>
                     </div>
                   </Step>
                 );
@@ -194,9 +196,7 @@ class Scrolly extends PureComponent {
             </Scrollama>
           </div>
           {/* Container For Right Side Viz*/}
-          <div className={classes.graphic}>
-            {viz}
-          </div>
+          <div className={classes.graphic}>{viz}</div>
         </div>
       </div>
     );
