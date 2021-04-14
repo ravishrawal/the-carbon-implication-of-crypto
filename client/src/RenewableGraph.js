@@ -33,7 +33,8 @@ class RenewableGraph extends Component {
 								        { fill: "white" }
 								        ]}
 								/>
-								<VictoryLegend x={50} y={45}
+								<VictoryLegend 
+								  x={50} y={45}
 								  orientation="vertical"
 								  gutter={20}
 								  data={[

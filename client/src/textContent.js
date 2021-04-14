@@ -1,7 +1,6 @@
 // ADD YOUR TEXT HERE
 
 const scrollyContent = [
-                      'The benefits of crypto include',
                       <h5>Some Terminology-</h5>,
                       <div className='term-div'>
                         <p className='term-header'>Cryptocurrency Mining</p>
@@ -21,19 +20,32 @@ const scrollyContent = [
                           is the original cryptocurrency and it remains the go-to leader of the space. They are also the most popular and well-established example of a mineable cryptocurrency
                         </p>
                       </div>,
-                      'The last x years have shown an incredible rise in adoption...',
-                      'and price',
-                      'Bitcoin consumes as much energy as 1,000 plane rides yearly...',
-                      'and as much as the entire XX industry as a whole.',
-                      'hash rate',
-                      'hash rate vs energy',
-                      '<h5>Despite a rising rate of renewable adoption, the future looks bleak</h5>',
-                      'And not necessarily to the noblest end',
-                      'We need to establish policies that leverage the benefits of cryptocurrency while looking out for the environment. Here’s what we can do:',
-                      "<h5>Apply lower bounds on algorithm efficiency:</h5> Bitcoin consumes an immense amount of energy, but only makes up 80% of the market cap and is actually more energy efficient than a lot of its counterparts. This is because it uses a SHA-256 hash algorithm, which cryptocurrencies like Monero and Dogecoin do not support, rendering them magnitudes more energy intensive.",
-                      "<h5>Move away from proof-of-work models:</h5> These reward greater computing power and encourage. Bitcoin is one of the more efficient proof-of-work coins out there, but there are proof-of-stake alternatives like Tezos that consume on the order of a million times less energy.",
-                      "<h5>Very carefully consider worthwhile use cases for Bitcoin:</h5> While companies are trying to remain trendy by accepting Bitcoin payments today, a single Bitcoin transaction consumes ~ 821kWH of energy. With ~369 billion credit card transactions per year (as of 2018), and rising this would mean 303 trillion kWh/year, 100x that of the US total energy consumption/year.",
-                      "<h5>We need better regulation.</h5>"
+                      'Bitcoin was the first cryptocurrency to enter the market in 2009.\n It is currently the largest cryptocurrency by market capitalization. Although it was slow to gain traction, its trading volume boomed in 2017 and again in 2020...',
+                      'as did its price.',
+                      'What\'s less discussed is its environmental impact. Let\'s put the energy consumption of the Bitcoin Network into perspective by comparing it to relatable quantities.',
+                      'And polluting industries.',
+                      'And to a VISA transaction.',
+                      'But why does bitcoin consume an enormous amount of energy? To add valid transactions to the ledger, volunteers have to find a solution to a computationally intensive puzzle based on a ‘hash function’ called SHA-256.',
+                      'However is more energy being consumed inherently bad for the environment?  Supporters argue that as long as the mining farms use renewable energy, energy consumption is not an issue. However this argument has two flaws: Increase in renewable energy production will not be able to keep up with energy needed to maintain the network. And using the limited supply of renewable energy for mining will only allow Bitcoin miners to go green while forcing other industries to use fossil fuels ',
+                      <div className='term-div'>
+                        <h5>So What Can We Do?</h5>
+                        <p className='term-header'>Move away from Proof of Work (PoW) to Proof of Stake (PoS) Algorithms</p>
+                        <p className='term-content'>
+                          PoW algorithms only allow users to add transactions to the ledger if they have given a proof of computational ‘work’ completed. PoS algorithms work for systems where blocks are not ‘mined’ by solving a puzzle, but validated by validators that are selected by the network
+                        </p>
+                      </div>,
+                      <div className='term-div'>
+                        <p className='term-header'>Apply lower bounds on consensus algorithm efficiency</p>
+                        <p className='term-content'>
+                          Bitcoin consumes an immense amount of energy, but only makes up 80% of the market cap and is actually more energy efficient than a lot of its counterparts. This is because it uses a SHA-256 hash algorithm, which cryptocurrencies like Monero and Dogecoin do not support, rendering them magnitudes more energy intensive.
+                        </p>
+                      </div>,
+                      <div className='term-div'>
+                        <p className='term-header'>Regulate Mining Farms</p>
+                        <p className='term-content'>
+                          Some experts suggest levying a Carbon Tax on mining activity. Some authorities, like those in Quebec, Canada have increased the cost of electricity for miners
+                        </p>
+                      </div>,
                     ]
 
 
