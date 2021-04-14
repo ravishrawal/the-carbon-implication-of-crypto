@@ -27,7 +27,8 @@ class HashRateGraph extends Component {
 								        { fill: "white" }
 								        ]}
 							>
-								<VictoryLabel 
+								<VictoryLabel
+									theme={custom_theme}
 									text="Hash Rate of Cryptocurrency" 
 									x={225} 
 									y={30} 
@@ -37,17 +38,15 @@ class HashRateGraph extends Component {
 								        ]}
 								/>
 								<VictoryLegend x={50} y={45}
+								  theme={custom_theme}
 								  orientation="vertical"
 								  gutter={20}
 								  data={[
-								    { name: "Cryptocurrency", symbol: { fill: "#c43a31" } }
+								    { name: "Cryptocurrency"}
 								  ]}
 								/>
 								<VictoryLine
-								    style={{
-								      data: { stroke: "#c43a31" },
-								      parent: { border: "1px solid #ccc" }
-								    }}
+								    theme={custom_theme}
 								    data={data}
 								    x={d=>d.Date}
 								    y={d=>d.Value}

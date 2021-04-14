@@ -1,44 +1,43 @@
-import React, { PureComponent } from 'react';
-import injectSheet from 'react-jss';
-import { Scrollama, Step } from 'react-scrollama';
-import RenewableGraph from './RenewableGraph.js';
-import PriceGraph from './PriceGraph.js';
-import VolumeGraph from './VolumeGraph.js';
-import EnergyHashGraph from './EnergyHashGraph.js'
-import BarChart from './BarChart.js'
-import BarChartTs from './BarChartTs.js'
-import BarChartNoPoW from './BarChartNoPoW.js'
+import React, { PureComponent } from "react";
+import injectSheet from "react-jss";
+import { Scrollama, Step } from "react-scrollama";
+import RenewableGraph from "./RenewableGraph.js";
+import PriceGraph from "./PriceGraph.js";
+import VolumeGraph from "./VolumeGraph.js";
+import EnergyHashGraph from "./EnergyHashGraph.js";
+import BarChart from "./BarChart.js";
+import BarChartTs from "./BarChartTs.js";
+import BarChartNoPoW from "./BarChartNoPoW.js";
 import BitcoinComparissonGraph from "./BitcoinComparissonGraph";
 import BitcoinComparissonGraph2 from "./BitcoinComparissonGraph2";
 import RenewableAdoption from "./RenewableAdoption";
-import {scrollyContent as textContent} from './textContent.js';
+import { scrollyContent as textContent } from "./textContent.js";
 
-import BenefitsTable from './BenefitsTable.png';
-import BitcoinImg from './bitcoin-img.jpeg';
-import MiningImg from './crypto-mining-img.jpeg';
-import BlockchainImg from './blockchain-img.jpeg';
+import BenefitsTable from "./BenefitsTable.png";
+import BitcoinImg from "./bitcoin-img.jpeg";
+import MiningImg from "./crypto-mining-img.jpeg";
+import BlockchainImg from "./blockchain-img.jpeg";
 
-import {colors} from './theme.js';
-
+import { colors } from "./theme.js";
 
 // ADD YOUR VIZ COMPONENT HERE. ARRAY MUST BE SAME LENGTH AS TEXT CONTENT ARRAY.
 // IF YOU WANT IT TO PERSIST FOR MORE THAN 1 TEXT BLOCK THEN REPEAT IT
 
 const vizContent = [
-                      '',
-                      <img src={MiningImg} />,
-                      <img src={BlockchainImg} />,
-                      <img src={BitcoinImg} />,
-                      <VolumeGraph/>,
-                      <PriceGraph/>,
-                      <BitcoinComparissonGraph/>,
-                      <BitcoinComparissonGraph2/>,
-                      <BarChartTs/>,
-                      <EnergyHashGraph/>,
-                      <RenewableAdoption/>,
-                      <BarChartNoPoW/>,
-                      <BarChart/>,
-                   ]
+  "",
+  <img src={MiningImg} />,
+  <img src={BlockchainImg} />,
+  <img src={BitcoinImg} />,
+  <VolumeGraph />,
+  <PriceGraph />,
+  <BitcoinComparissonGraph />,
+  <BitcoinComparissonGraph2 />,
+  <BarChartTs />,
+  <EnergyHashGraph />,
+  <RenewableAdoption />,
+  <BarChartNoPoW />,
+  <BarChart />,
+];
 
 const sectionHeight = 100;
 
@@ -57,7 +56,7 @@ const styles = {
   },
   sectionBreak: {
     background: colors.cryptoblue,
-    height: sectionHeight+'vh'
+    height: sectionHeight + "vh",
   },
   sectionTitle: {
     textAlign: "center",
@@ -85,16 +84,16 @@ const styles = {
     justifyContent: "space-between",
   },
   graphic: {
-    flexBasis: '60%',
-    position: 'sticky',
-    width: '100%',
-    height: '60vh',
-    top: '20vh',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    '& p': {
-      fontSize: '5rem',
+    flexBasis: "60%",
+    position: "sticky",
+    width: "100%",
+    height: "60vh",
+    top: "20vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    "& p": {
+      fontSize: "5rem",
       fontWeight: 700,
       textAlign: "center",
       color: "#fff",
@@ -161,8 +160,8 @@ class Scrolly extends PureComponent {
   render() {
     const { data, steps, progress, text, viz } = this.state;
     const { classes, slice, background } = this.props;
-    const startSlice = slice[0]
-    const endSlice = slice[1]
+    const startSlice = slice[0];
+    const endSlice = slice[1];
     return (
       <div style={{ background: background }}>
         <p className={classes.pageSubtitle}>Scroll ↓</p>
