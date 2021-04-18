@@ -9,7 +9,7 @@ import {
   VictoryLabel,
 } from "victory";
 import "./App.css";
-import myDataset from "./barCharData.js";
+import myDataset from "./barChartData.js";
 import theme, {colors} from './theme.js';
 
 class RenewableAdoption extends Component {
@@ -41,7 +41,7 @@ class RenewableAdoption extends Component {
     console.log('DATASET', dataset);
 
     return (
-      <div style={{ height: "inherit", width: "inherit" }}>
+      <div className="graph-container">
         {dataset && (
           <div className="Graph">
             <VictoryChart
@@ -52,26 +52,30 @@ class RenewableAdoption extends Component {
               theme={VictoryTheme.material}
             >
               <VictoryLegend
-                x={50} y={45}
+                x={50} y={15}
+                theme = {theme}
                 orientation="vertical"
                 gutter={20}
+                title= "Energy used by Bitcoin Network (TWh) over time"
+                style={{title: {fontSize: 12, fill:colors.cryptogrey },labels: {fontSize: 10 } }}
                 data={[
                   {
-                    name: "Total Energy Used For Bitcoin (TWh)",
-                    symbol: { fill: "#9a9af8" },
-                    labels: { fill: "white" },
+                    name: "Total Energy",
+                    symbol: { fill: colors.cryptoorange },
+                    labels: { fill: colors.cryptogrey },
                   },
                   {
-                    name: "Renewable Energy Used For Bitcoin (TWh)",
+                    name: "Renewable Energy",
                     symbol: { fill: "#daece2" },
-                    labels: { fill: "white" },
+                    labels: { fill: colors.cryptogrey },
                   },
                 ]}
               />
 
 
-              <VictoryStack colorScale={["#daece2", "#9a9af8"]}>
+              <VictoryStack colorScale={["#daece2", colors.cryptoorange ]}>
                 {dataset.map((data, i) => {
+                  console.log(i)
                   return (
                     <VictoryBar
                       animate={{
@@ -84,8 +88,10 @@ class RenewableAdoption extends Component {
                       labelComponent={
                         <VictoryLabel
                         text={ 
-                          ({ datum }) => datum._stack === 1 ? `${Math.round(datum.y*100)/100}` : ''
+                          ({ datum }) => `${(Math.round(datum.y*10)/10).toFixed(1)}`
                         }
+                        dy={i<1?-5:-15}
+
                         style={[{
                           fontSize:6,
                           fill: colors.cryptolightgreen
@@ -99,26 +105,25 @@ class RenewableAdoption extends Component {
               <VictoryAxis
                 dependentAxis
                 tickFormat={(tick) => `${tick}`}
+                theme={theme}
                 style={{
                   axisLabel: { fontSize: 12, padding: 30 },
                   grid: { strokeWidth: 0 },
                   tickLabels: {
-                    fill: "#e5e5e5",
+                    fill: colors.cryptogrey,
                   },
-                  axis: {
-                    stroke: "#e5e5e5", //CHANGE COLOR OF X-AXIS
-                  },
+                  // axis: {
+                  //   stroke: "#e5e5e5", //CHANGE COLOR OF X-AXIS
+                  // },
                 }}
               />
               <VictoryAxis
+                them={theme}
                 style={{
                   axisLabel: { fontSize: 12, padding: 30 },
                   grid: { strokeWidth: 0 },
                   tickLabels: {
-                    fill: "#e5e5e5",
-                  },
-                  axis: {
-                    stroke: "#e5e5e5", //CHANGE COLOR OF X-AXIS
+                    fill: colors.cryptogrey,
                   },
                 }}
                 tickFormat={[

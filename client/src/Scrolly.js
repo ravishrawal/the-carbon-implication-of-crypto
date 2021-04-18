@@ -58,12 +58,22 @@ const styles = {
     background: colors.cryptoblue,
     height: sectionHeight + "vh",
   },
+
+  
   sectionTitle: {
     textAlign: "center",
     fontSize: 32,
     padding: sectionHeight / 2 + "vh 0%",
     color: "white",
   },
+  myTitle: {
+    textAlign: "center",
+    fontSize: 32,
+    padding: sectionHeight / 2 + "vh 0%",
+    color: "white",
+  },
+
+
   description: {
     maxWidth: 600,
     margin: "10px auto 30px",
@@ -90,8 +100,7 @@ const styles = {
     height: "60vh",
     top: "20vh",
     display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: "baseline",
     "& p": {
       fontSize: "5rem",
       fontWeight: 700,
@@ -164,9 +173,10 @@ class Scrolly extends PureComponent {
     const endSlice = slice[1];
     return (
       <div style={{ background: background }}>
-        <p className={classes.pageSubtitle}>Scroll ↓</p>
         {/*Container for entire scrollytelling*/}
         <div className={classes.graphicContainer}>
+        {/* Container For Right Side Viz*/}
+          <div className={classes.graphic}>{viz}</div>
           {/*Container For Left Side Text*/}
           <div className={classes.scroller}>
             <Scrollama
@@ -188,8 +198,6 @@ class Scrolly extends PureComponent {
               })}
             </Scrollama>
           </div>
-          {/* Container For Right Side Viz*/}
-          <div className={classes.graphic}>{viz}</div>
         </div>
       </div>
     );

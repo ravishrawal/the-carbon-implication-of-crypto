@@ -7,6 +7,7 @@ const cryptopurple = "#9A9AF8"
 const cryptocream = "#E5E5E5"
 const cryptogrey = "#8A8A8F"
 const cryptoblack = "#000000"
+const cryptoorange = "#F7941D"
 const colors = [
   cryptoblue,
   cryptolightgreen,
@@ -14,7 +15,8 @@ const colors = [
   cryptopurple,
   cryptocream,
   cryptogrey,
-  cryptoblack
+  cryptoblack,
+  cryptoorange
 ];
 
 const colors_obj = {
@@ -24,7 +26,8 @@ const colors_obj = {
   cryptopurple,
   cryptocream,
   cryptogrey,
-  cryptoblack
+  cryptoblack,
+  cryptoorange
 };
 
 // Typography

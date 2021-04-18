@@ -14,7 +14,7 @@ class RenewableGraph extends Component {
 	render(){
 		const {data} = this.state;
 		return (
-				<div style={{height:"inherit", width: "inherit"}}>
+				<div className="graph-container">
 					{
 						data && 
 						<div className="Graph">
@@ -37,6 +37,7 @@ class RenewableGraph extends Component {
 								  x={50} y={45}
 								  orientation="vertical"
 								  gutter={20}
+								  title= "Energy used by Bitcoin Network (TWh) over time"
 								  data={[
 								    { name: "Cryptocurrency", symbol: { fill: "#c43a31" }, labels: { fill: "white" } } ,
 								    { name: "Renewables", symbol: { fill: "#2FA453" }, labels: { fill: "white" } }

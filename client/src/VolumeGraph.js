@@ -2,7 +2,7 @@ import {Component} from 'react';
 import {VictoryChart, VictoryLine, VictoryTheme, VictoryLabel, VictoryLegend, VictoryAxis} from 'victory';
 import data from './bitcoin_volume_data.js';
 import './App.css';
-import custom_theme from './theme.js';
+import custom_theme,{colors} from './theme.js';
 
 class VolumeGraph extends Component {
 	constructor(){
@@ -14,12 +14,13 @@ class VolumeGraph extends Component {
 	render(){
         const {data} = this.state;
 		return (
-				<div style={{height:"inherit", width: "inherit"}}>
+				<div className="graph-container">
 					{
 						data && 
 						<div className="Graph">
 							<VictoryChart
 							  theme={custom_theme}
+							  padding={{ top: 20, bottom: 100, left:50, right:10 }}
 							  minDomain={{ y: 0 }}
 							  maxDomain={{ y: 1000000000 }}
 							  width={450}
@@ -32,14 +33,17 @@ class VolumeGraph extends Component {
 								        { fill: "white" }
 								        ]}
 								/>
-								<VictoryLegend x={50} y={45}
+								<VictoryLegend 
+									x={50} 
+									y={10}
 									theme={custom_theme}
 								  orientation="vertical"
 								  gutter={20}
 								  theme={custom_theme}
 								  data={[
-								    { name: "Daily Trading Volume of Bitcoin" }
+								    { name: "Daily Trading Volume of Bitcoin", symbol:{fill:colors.cryptoorange }}
 								  ]}
+
 								/>
 								<VictoryAxis
 									dependentAxis
@@ -72,7 +76,8 @@ class VolumeGraph extends Component {
 								<VictoryLine
 									theme={custom_theme}
 								    style={{
-								      parent: { border: "1px solid #ccc"}
+								      parent: { border: "1px solid #ccc"},
+								      data: {stroke: colors.cryptoorange}
 								    }}
 								    data={data}
 								    x={d=>d.Date}

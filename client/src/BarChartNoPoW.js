@@ -27,7 +27,7 @@ class BarChartNoPoW extends Component {
 		const {algo_energy_data, bar_data} = this.state;
 		// console.log("RG data:", data)
 		return (
-				<div style={{height:"inherit", width: "inherit"}}>
+				<div className="graph-container">
 					{
 						algo_energy_data && 
 						<div>

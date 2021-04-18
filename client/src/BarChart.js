@@ -23,7 +23,7 @@ class BarChart extends Component {
     const { algo_data } = this.state;
     // console.log("RG data:", data)
     return (
-      <div style={{ height: "inherit", width: "inherit" }}>
+      <div className="graph-container">
         {algo_data && (
           <div>
             <VictoryChart

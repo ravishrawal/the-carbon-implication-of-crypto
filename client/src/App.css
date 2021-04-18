@@ -1,8 +1,12 @@
 
 .App {
-  text-align: center;
+  text-align: right;
 }
 
+.graph-container {
+  height: auto;
+  width:inherit;
+}
 
 /*.Graph {
   background-color: #282c34;
@@ -17,6 +21,26 @@
   color: white;
 }*/
 
+@media screen and (max-width: 2000px){
+  #bgimg {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .App {
+    width:100vw;
+    height:100vh;
+  }
+  .term-content{
+    font-size:24px !important;
+  }
+  .Graph{
+    margin-bottom: 10vh;
+  }
+
+}
+
+
 .ScrollStep {
   height: 100vh;
 }
@@ -29,25 +53,22 @@ p .term-header{
   color:#8A8A8F !important;
 }
 
+
+
 p .term-content{
   font-family: 'Roboto';
+  font-size:32px;
   margin-top: 0 !important;
   padding:0 !important;
-  font-size:32px !important;
-  color:#000000 !important;
-}
-
-
-p {
-  font-family: 'Roboto';
-  font-size:32px;
   color:#000000;
+  text-align: left !important;
 }
 
 h5 {
   font-family: 'Roboto';
   font-size:72px !important;
   color:#8A8A8F;
+  margin-block-start: 0;
 }
 
 

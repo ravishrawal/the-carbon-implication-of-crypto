@@ -1,6 +1,6 @@
 const transaction_data = [  
 	{
-		transaction: 'BTC',
+		transaction: 'Bitcoin',
 		energy_wh: 297.73 //821.48/2759.12 * 1000
 	},
 	{

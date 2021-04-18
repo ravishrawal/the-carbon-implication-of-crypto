@@ -4,7 +4,7 @@ import "./App.css";
 import Scrolly from "./Scrolly.js";
 import SectionScreen from "./SectionScreen.js";
 import TitleScreen from "./TitleScreen.js";
-import { titleContent } from "./textContent.js";
+import { sectionContent } from "./textContent.js";
 import { colors } from "./theme.js";
 
 function App() {
@@ -13,20 +13,21 @@ function App() {
     <div className="App">
       <header className="App-header"></header>
       <TitleScreen
-        title={"The environmental impact of cryptocurrency"}
+        title={["The Environmental Impact of Bitcoin","subheading"]}
         subtitle="exploring the energy consumption of Bitcoin and other cryptocurrencies"
-        textColor="black"
+        textColor="white"
       />
       <SectionScreen
-        title="What is cryptocurrency?"
-        text={titleContent[0]}
+        title="What is a cryptocurrency?"
+        text={sectionContent[0]}
         textColor="white"
-        backgroundColor={colors.cryptoblue}
+        backgroundColor={colors.cryptopurple}
       />
       <Scrolly slice={[0, 4]} background={colors.cryptocream} />
       <Scrolly slice={[4, 6]} background={colors.cryptoblack} />
       <SectionScreen
         title={"But Let's Gain Some Perspective"}
+        text={sectionContent[1]}
         textColor={colors.cryptolightgreen}
         backgroundColor={colors.cryptogrey}
       />

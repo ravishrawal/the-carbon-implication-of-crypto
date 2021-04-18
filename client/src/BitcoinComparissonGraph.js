@@ -22,12 +22,13 @@ class BitcoinComparissonGraph extends Component {
     const { data } = this.state;
 
     return (
-      <div style={{ height: "inherit", width: "inherit" }}>
+      <div className="graph-container">
         {data && (
           <div className="Graph">
             <VictoryChart
               theme={theme}
               domainPadding={30}
+              padding={{ top: 20, bottom: 100, left:50, right:10 }}
               minDomain={{ y: 0 }}
               maxDomain={{ y: 80 }}
               width={450}
@@ -38,13 +39,18 @@ class BitcoinComparissonGraph extends Component {
                 labels={true}
                 labelComponent={
                   <VictoryLabel
-                  text={({ datum }) => `${Math.round(datum.y*100)/100}`}
+                  text={({ datum }) => `${(Math.round(datum.y*100)/100).toFixed(1)}`}
                   style={[{
                     fontSize: 6,
                     fill: colors.cryptogrey,
                   }]}
                   />
                 }
+                style={{
+                      data: {
+                        fill:({datum})=> datum.x==="Bitcoin\nNetwork\nFor A Year"? colors.cryptoorange :colors.cryptopurple,
+                  }
+                }}                
                 animate={{
                   duration: 3000,
                   onLoad: { duration: 3000 },
@@ -62,17 +68,17 @@ class BitcoinComparissonGraph extends Component {
                 ]}
               />
               <VictoryLegend
+              x={55} 
+              y={10}
               theme={theme}
-                x={50}
-                y={45}
-                orientation="vertical"
-                gutter={20}
-                data={[
-                  {
-                    name: "Energy Consumption (TWh)"
-                  }
-                ]}
-
+              title="Energy Consumption (TWh)"
+              orientation="horizontal"
+              gutter={20}
+              style={{title: {fontSize: 10 },labels: {fontSize: 10 } }}
+              data={[
+                { name: "Bitcoin", symbol: { fill: colors.cryptoorange, type: "circle" } },
+                { name: "Other", symbol: { fill: colors.cryptopurple } },
+              ]}
               />
 
               <VictoryAxis

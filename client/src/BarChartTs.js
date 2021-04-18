@@ -12,7 +12,6 @@ class BarChartTs extends Component {
 		this.state={
 			transaction_data: [{transaction:'BTC', energy_wh:0},transaction_data[1]]
 		}
-		// this.renderBitcoin = this.renderBitcoin.bind(this)
 	}
 	componentDidMount(){
 		this.setStateInterval = window.setInterval(() => {
@@ -21,22 +20,13 @@ class BarChartTs extends Component {
 	      });
 	    }, 5000);
 	}
-	// renderBitcoin(){
-	// 	console.log('renderBitcoin')
- //      this.setState({
- //        transaction_data: transaction_data
- //      });
-	// }
 
-  // componentWillUnmount() {
-  //   window.clearInterval(this.setStateInterval);
-  // }
 	render(){
 		const {transaction_data, bar_data} = this.state;
 		const {renderBitcoin} = this;
 		// console.log("RG data:", data)
 		return (
-				<div style={{height:"inherit", width: "inherit"}}>
+				<div className="graph-container">
 					{
 						transaction_data && 
 						<div>
@@ -44,10 +34,10 @@ class BarChartTs extends Component {
 							  	theme={custom_theme}
 							  // minDomain={{ y: 1 }}
 							  // maxDomain={{ y: 6000 }}
-								domainPadding={20}
+								domainPadding={60}
 								padding={{ top: 20, bottom: 100, left:50, right:10 }}
-								width={200}
-								height={200}
+								width={325}
+								height={300}
 								// scale={{x:"linear",y:"log"}}
 
 								animate={{
@@ -56,69 +46,70 @@ class BarChartTs extends Component {
 								}}
 
 							>
-								<VictoryLabel 
-									text="Energy Consumption of 1 Visa vs 1 BTC Transaction"
+								
+								<VictoryLegend 
+									x={55} 
+									y={10}
 									theme={custom_theme}
-									x={120} 
-									y={10} 
-									textAnchor="middle"
-									style={[
-								        { 
-								          	fontSize:6,
-								          	fontFamily: "Helvetica",
-								          	fill:colors.cryptocream
-								        }
-								        ]}
-								/>
+								  	title="Energy Consumption per Transaction (Wh)"
+								    orientation="horizontal"
+								    gutter={20}
+
+								    style={{title: {fontSize: 7 },labels: {fontSize: 7 } }}
+								    data={[
+								      { name: "Bitcoin", symbol: { fill: colors.cryptoorange, type: "circle" } },
+								      { name: "VISA", symbol: { fill: colors.cryptopurple } },
+								    ]}
+
+								  />
+
 								<VictoryAxis
 									dependentAxis
-									label = {()=>{
-										var l = "Energy Consumption\n(Wh)"
-										return l
-										}	
-									}
-									// tickValues= {[0,1e0,1e5,1e10]}
-									// tickFormat={(y) => (`${y.toExponential()} `)}
+									theme={custom_theme}
 									style={{
-									axis: {stroke: "#756f6a"},
-									axisLabel: {padding: 15, angle: 270},
-									// grid: {stroke: ({ tick }) => tick > 0.5 ? "red" : "grey"},
+									// axis: {stroke: "#756f6a"},
+									// axisLabel: {fontSize: 12, padding: 35},
+									tickLabels: {fontSize: 8, padding: 2}
+									// // grid: {stroke: ({ tick }) => tick > 0.5 ? "red" : "grey"},
 									// ticks: {stroke: "grey", size: 5},
-									tickLabels: {fontSize: 5, padding: 0}
+									// tickLabels: {fontSize: 3, padding: ({tick})=> {
+									// 									return tick%2==0?5:0
 									}}
+
 						        />	
 								<VictoryAxis
 									// dependentAxis
 									// tickFormat specifies how ticks should be displayed
 									// tickFormat={(y) => (`$${y /1e9} GHashes/s/W`)}
+									theme={custom_theme}
 									style={{
-									axis: {stroke: "#756f6a"},
-									axisLabel: {fontSize: 12, padding: 35},
-									tickLabels: {fontSize: 5, padding: 0}
-									// grid: {stroke: ({ tick }) => tick > 0.5 ? "red" : "grey"},
+									// axis: {stroke: "#756f6a"},
+									// axisLabel: {fontSize: 12, padding: 35},
+									tickLabels: {fontSize: 8, padding: 2}
+									// // grid: {stroke: ({ tick }) => tick > 0.5 ? "red" : "grey"},
 									// ticks: {stroke: "grey", size: 5},
 									// tickLabels: {fontSize: 3, padding: ({tick})=> {
 									// 									return tick%2==0?5:0
-									// 										}}
 									}}
+
 						        />
 								<VictoryBar
 									data={transaction_data}
 									x = 'transaction'
 									y = 'energy_wh'
 									style={{
-										fontSize:4
-								      // data: { stroke: "#c43a31" },
-								      // parent: { border: "1px solid #ccc"}
-								    }}
-								    barWidth={25}
+								      	data: {
+								      		fill:({datum})=> datum.transaction==="Bitcoin"? colors.cryptoorange :colors.cryptopurple,
+								    }
+									}}
+								    barWidth={30}
 								    // sortKey="y"
 								    labels={true}
 								    labelComponent={
 								    	<VictoryLabel
 								    	text={({ datum }) => `${Math.round(datum.energy_wh*100)/100}`}
 								    	style={[{
-								    		fontSize:3,
+								    		fontSize:5,
 								    		fill: colors.cryptogrey
 								    	}]}
 								    	/>
