@@ -62,6 +62,7 @@ html,body
 p .term-header{
   font-family: 'Roboto';
   margin-top: 0 !important;
+  margin-bottom: 15px;
   padding:0 !important;
   font-size:44px !important;
   color:black !important;
@@ -101,6 +102,7 @@ h5 {
     width:50%;
     padding-left:28vw;
     padding-right: 40vw;
+    padding-top: 5vw;
     font-weight: 300;
   }
 
@@ -115,5 +117,8 @@ img {
 
 #price-content {
   font-size: 17px;
+}
+.li {
+  margin:5px;
 }
 

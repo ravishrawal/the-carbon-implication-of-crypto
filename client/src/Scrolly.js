@@ -34,9 +34,9 @@ const vizContent = [
   <BitcoinComparissonGraph2 />,
   <BarChartTs />,
   '',
-  <img src={MiningImg} />,
-  <img src={BlockchainImg} />,
   <img src={BitcoinImg} />,
+  <img src={BlockchainImg} />,
+  <img src={MiningImg} />,
   <EnergyHashGraph />,
   <RenewableAdoption />,
   <BarChartNoPoW />,
@@ -159,7 +159,7 @@ class Scrolly extends PureComponent {
     var viz = vizContent[data];
     setTimeout(()=>{
       this.setState({ data, text, viz });
-    },300)
+    },100)
   };
 
   onStepExit = ({ direction, data }) => {

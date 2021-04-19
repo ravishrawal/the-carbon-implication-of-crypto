@@ -26,7 +26,7 @@ function App() {
       />
       <Scrolly slice={[0, 2]} background={colors.cryptocream} />
       <SectionScreen
-        title={"The Unknown Energy Guzzler"}
+        title={"Bitcoin's Large Energy Footprint"}
         text={sectionContent[1]}
         textColor={colors.cryptocream}
         backgroundColor={"black"}
@@ -41,8 +41,8 @@ function App() {
       <Scrolly slice={[6, 9]} background={colors.cryptocream} is_info={true} />
       <Scrolly slice={[9, 11]} background={colors.cryptocream} />
       <SectionScreen
-        title={"So What Can We Do?"}
-        text={''}
+        title={"What Can We Do?"}
+        text={sectionContent[3]}
         textColor={colors.cryptocream}
         backgroundColor={colors.cryptoblack}
       />

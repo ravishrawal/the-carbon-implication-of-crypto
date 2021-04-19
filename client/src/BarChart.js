@@ -32,21 +32,21 @@ class BarChart extends Component {
               // maxDomain={{ y: 6000 }}
               domainPadding={20}
               padding={{ top: 20, bottom: 100, left: 50, right: 10 }}
-              width={200}
-              height={200}
+              width={250}
+              height={220}
               scale={{ x: "linear", y: "log" }}
             >
               <VictoryLabel
-                text="Efficiency of Suitable Mining Devices for Hashing Algos"
+                text="Efficiency of Suitable Mining Devices for Different Algos"
                 theme={custom_theme}
-                x={120}
-                y={10}
+                x={140}
+                y={5}
                 textAnchor="middle"
                 style={[
                   {
-                    fontSize: 5,
-                    fontFamily: "Helvetica",
-                    fill: colors.cryptocream,
+                    fontSize: 6.5,
+                    fontFamily: "Roboto",
+                    fill: colors.cryptogrey,
                   },
                 ]}
               />
@@ -77,9 +77,9 @@ class BarChart extends Component {
                   // grid: {stroke: ({ tick }) => tick > 0.5 ? "red" : "grey"},
                   // ticks: {stroke: "grey", size: 5},
                   tickLabels: {
-                    fontSize: 3,
+                    fontSize: 4,
                     padding: ({ tick }) => {
-                      return tick % 2 == 0 ? 5 : 0;
+                      return tick % 2 == 0 ? 6 : 0;
                     },
                   },
                 }}
