@@ -17,7 +17,7 @@ class BarChartNoPoW extends Component {
 	      this.setState({
 	        algo_energy_data: algo_energy_data
 	      });
-	    }, 3000);
+	    }, 2000);
 	}
 
   // componentWillUnmount() {

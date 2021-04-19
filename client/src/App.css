@@ -1,3 +1,18 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+html,body
+{
+    overflow-x: hidden; 
+}
+
 
 .App {
   text-align: right;
@@ -40,7 +55,6 @@
 
 }
 
-
 .ScrollStep {
   height: 100vh;
 }
@@ -50,7 +64,8 @@ p .term-header{
   margin-top: 0 !important;
   padding:0 !important;
   font-size:44px !important;
-  color:#8A8A8F !important;
+  color:black !important;
+  font-weight: 300 !important;
 }
 
 
@@ -60,15 +75,45 @@ p .term-content{
   font-size:32px;
   margin-top: 0 !important;
   padding:0 !important;
-  color:#000000;
   text-align: left !important;
+  font-weight: 300
 }
+
 
 h5 {
   font-family: 'Roboto';
   font-size:72px !important;
   color:#8A8A8F;
   margin-block-start: 0;
+  font-weight: 300 !important;
 }
 
+.sectionTitle {
+    text-align: left;
+    font-size: 54px !important;
+    padding: 39vh 28vw 0% 28vw;
+}
+
+.sectionText {
+    font-family: 'Roboto';
+    text-align: left;
+    font-size: 24px;
+    width:50%;
+    padding-left:28vw;
+    padding-right: 40vw;
+    font-weight: 300;
+  }
+
+  .term-subheading {
+    font-weight: 500 !important;
+  }
+
+img {
+  width: 65%;
+  margin: auto;
+}
+
+#price-content {
+  font-size: 17px;
+}
 

@@ -10,21 +10,16 @@ const styles = {
     height: '100vh',
   },
   sectionTitle: {
-    textAlign: 'center',
+    textAlign: 'left',
     fontSize: 72,
     fontFamily: 'Roboto',
+    fontWeight: 300,
+    paddingLeft: '300px'
     // padding: sectionHeight/3 +"vh 0%"
 
   },
 };
 
-// function render_text(text_array)=>{
-  
-//   for (var i=0;i<text_array.length;i++){
-
-//   }
-
-// }
 
 const TitleScreen = ({title, subtitle, textColor, classes}) => {
     
@@ -39,18 +34,10 @@ const TitleScreen = ({title, subtitle, textColor, classes}) => {
               color: textColor,
               paddingTop: "40vh",
               paddingRight: "430px",
-              paddingLeft: "50px",
+              paddingLeft: "300px",
             }}>
-            <b>{title[0]}</b>
-          </p>
-          <p 
-            style={{
-              color: textColor,
-              textAlign: "left",
-              paddingLeft: "51px",
-              paddingTop: "10",
-            }}>
-          {title[1]}
+            {title[0]} <br/>
+            {title[1]}
           </p>
         </div>
     );

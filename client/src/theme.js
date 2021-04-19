@@ -147,19 +147,6 @@ const theme = {
     },
     baseProps
   ),
-  histogram: Object.assign(
-    {
-      style: {
-        data: {
-          fill: cryptolightgreen,
-          stroke: cryptoblue,
-          strokeWidth: 2
-        },
-        labels: baseLabelStyles
-      }
-    },
-    baseProps
-  ),
   legend: {
     colorScale: colors,
     gutter: 10,
@@ -185,12 +172,6 @@ const theme = {
         },
         labels: baseLabelStyles
       }
-    },
-    baseProps
-  ),
-  stack: Object.assign(
-    {
-      colorScale: colors
     },
     baseProps
   )

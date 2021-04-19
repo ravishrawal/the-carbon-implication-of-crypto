@@ -8,16 +8,13 @@ const styles = {
   sectionBreak: {
     height: sectionHeight+'vh'
   },
-  sectionTitle: {
-    textAlign: 'center',
-    fontSize: 32,
-    padding: sectionHeight/2+"vh 0% 0% 0%"
-  },
   sectionText: {
-    textAlign: 'center',
+    textAlign: 'left',
     fontSize: 24,
-    margin:'auto',
-    width:'80%'
+    // margin:'auto',
+    width:'60%',
+    paddingLeft:'29vw',
+    paddingRight: '300px'
   },
 };
 
@@ -26,12 +23,14 @@ const SectionScreen = ({classes, title, text, backgroundColor, textColor}) => {
     backgroundColor = backgroundColor ? backgroundColor : 'green'
     return (
         <div className={classes.sectionBreak} style={{background: backgroundColor}}>
-          <h5 className={classes.sectionTitle} style={{color: textColor}}>{title}</h5>
-          <p className={classes.sectionText} style={{color: textColor}}>
+          <h5 className="sectionTitle" style={{color: textColor}}>{title}</h5>
+          <p
+          style={{color: textColor, }}>
             {text}
           </p>
         </div>
     );
   }
+
 
 export default injectSheet(styles)(SectionScreen);

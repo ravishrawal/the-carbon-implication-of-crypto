@@ -47,7 +47,7 @@ class RenewableAdoption extends Component {
             <VictoryChart
               minDomain={{ y: 0 }}
               maxDomain={{ y: 3000 }}
-              width={630}
+              width={450}
               domainPadding={{ x: 30, y: 20 }}
               theme={VictoryTheme.material}
             >
@@ -66,14 +66,14 @@ class RenewableAdoption extends Component {
                   },
                   {
                     name: "Renewable Energy",
-                    symbol: { fill: "#daece2" },
+                    symbol: { fill: colors.cryptoblue },
                     labels: { fill: colors.cryptogrey },
                   },
                 ]}
               />
 
 
-              <VictoryStack colorScale={["#daece2", colors.cryptoorange ]}>
+              <VictoryStack colorScale={[colors.cryptoblue, colors.cryptoorange ]}>
                 {dataset.map((data, i) => {
                   console.log(i)
                   return (
@@ -88,13 +88,13 @@ class RenewableAdoption extends Component {
                       labelComponent={
                         <VictoryLabel
                         text={ 
-                          ({ datum }) => `${(Math.round(datum.y*10)/10).toFixed(1)}`
+                          ({ datum }) => `${(Math.round(datum.y))}`
                         }
-                        dy={i<1?-5:-15}
+                        dy={i<1?-2:-10}
 
                         style={[{
-                          fontSize:6,
-                          fill: colors.cryptolightgreen
+                          fontSize:8,
+                          fill: i<1?colors.cryptoblue:colors.cryptoorange
                         }]}
                         />
                       }
@@ -111,6 +111,7 @@ class RenewableAdoption extends Component {
                   grid: { strokeWidth: 0 },
                   tickLabels: {
                     fill: colors.cryptogrey,
+                    fontSize: 8
                   },
                   // axis: {
                   //   stroke: "#e5e5e5", //CHANGE COLOR OF X-AXIS
@@ -124,6 +125,7 @@ class RenewableAdoption extends Component {
                   grid: { strokeWidth: 0 },
                   tickLabels: {
                     fill: colors.cryptogrey,
+                    fontSize: 8
                   },
                 }}
                 tickFormat={[
