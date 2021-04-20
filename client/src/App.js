@@ -38,15 +38,21 @@ function App() {
         textColor={'black'}
         backgroundColor={colors.cryptocream}
       />
-      <Scrolly slice={[6, 9]} background={colors.cryptocream} is_info={true} />
-      <Scrolly slice={[9, 11]} background={colors.cryptocream} />
+      <Scrolly slice={[5, 8]} background={colors.cryptocream} is_info={true} />
+      <Scrolly slice={[8, 10]} background={colors.cryptocream} />
       <SectionScreen
         title={"What Can We Do?"}
         text={sectionContent[3]}
         textColor={colors.cryptocream}
         backgroundColor={colors.cryptoblack}
       />
-      <Scrolly slice={[11, 14]} background={colors.cryptoblack} text_color={colors.cryptocream} />
+      <Scrolly slice={[10, 13]} background={colors.cryptoblack} text_color={colors.cryptocream} />
+      <SectionScreen
+        title={"Bibliography"}
+        text={sectionContent[4]}
+        textColor={colors.cryptoblack}
+        backgroundColor={colors.cryptocream}
+      />
     </div>
   );
 }

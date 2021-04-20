@@ -33,7 +33,6 @@ const vizContent = [
   <BitcoinComparissonGraph />,
   <BitcoinComparissonGraph2 />,
   <BarChartTs />,
-  '',
   <img src={BitcoinImg} />,
   <img src={BlockchainImg} />,
   <img src={MiningImg} />,
