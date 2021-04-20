@@ -71,14 +71,14 @@ const scrollyContent = [
                           <p className='term-content' style={{color:colors.cryptoblack}}> 
                           The total number of computations (hashes) per second being performed by all miners to 
                           solve the puzzle at any given time is known has hash rate. The Bitcoin system is designed
-                          such that the puzzles become harder as more people try to mine bitcoin, therby increasing 
+                          such that the puzzles become harder as more people try to mine bitcoin, thereby increasing 
                           energy consumption.
                         </p>
                       </div>,
                       <div className='term-div'>
                           <p className='term-content' style={{color:colors.cryptoblack}}> 
-                          Extrapolating the growth rate of renewable adoption
-                          of the Bitcoin Network over the last decade indicates 
+                          Extrapolating the rate of energy consumption the Bitcoin network and its 
+                          adoption of renewable energy over the last decade indicates 
                           that its carbon footprint will increase exponentialy.
                         </p>
                       </div>,
@@ -142,8 +142,8 @@ const sectionContent = [
                      Bitcoin, the first cryptocurrency, has come a long way since its inception in 2009. <br/> <br/>
                      Individual and commercial entities have shown renewed interest in the cryptocurrency,
                      at least as an investment vehicle. <br/> <br/>
-                     This interest is driving its volume and price up - 
-                     all the way to the moon.
+                     This interest is driving its volume and price up -  
+                     all the way to the moon, as said in crypto-speak.
                      </p>,
                      
                      <p className='sectionText'>
