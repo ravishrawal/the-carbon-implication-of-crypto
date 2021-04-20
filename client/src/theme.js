@@ -4,7 +4,7 @@ const cryptoblue = "#0070EE"
 const cryptolightgreen = "#DAECE2"
 const cryptolightblue = "#C9E5FE"
 const cryptopurple = "#9A9AF8"
-const cryptocream = "#E5E5E5"
+const cryptocream = "#F3F4F8"
 const cryptogrey = "#8A8A8F"
 const cryptoblack = "#000000"
 const cryptoorange = "#F7941D"
@@ -147,19 +147,6 @@ const theme = {
     },
     baseProps
   ),
-  histogram: Object.assign(
-    {
-      style: {
-        data: {
-          fill: cryptolightgreen,
-          stroke: cryptoblue,
-          strokeWidth: 2
-        },
-        labels: baseLabelStyles
-      }
-    },
-    baseProps
-  ),
   legend: {
     colorScale: colors,
     gutter: 10,
@@ -185,12 +172,6 @@ const theme = {
         },
         labels: baseLabelStyles
       }
-    },
-    baseProps
-  ),
-  stack: Object.assign(
-    {
-      colorScale: colors
     },
     baseProps
   )

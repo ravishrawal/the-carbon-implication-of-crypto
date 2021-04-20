@@ -24,15 +24,19 @@ import { colors } from "./theme.js";
 // IF YOU WANT IT TO PERSIST FOR MORE THAN 1 TEXT BLOCK THEN REPEAT IT
 
 const vizContent = [
-  "",
-  <img src={MiningImg} />,
-  <img src={BlockchainImg} />,
-  <img src={BitcoinImg} />,
+  // "",
+  // <img src={MiningImg} />,
+  // <img src={BlockchainImg} />,
+  // <img src={BitcoinImg} />,
   <VolumeGraph />,
   <PriceGraph />,
   <BitcoinComparissonGraph />,
   <BitcoinComparissonGraph2 />,
   <BarChartTs />,
+  '',
+  <img src={BitcoinImg} />,
+  <img src={BlockchainImg} />,
+  <img src={MiningImg} />,
   <EnergyHashGraph />,
   <RenewableAdoption />,
   <BarChartNoPoW />,
@@ -42,18 +46,6 @@ const vizContent = [
 const sectionHeight = 100;
 
 const styles = {
-  navbar: {
-    position: "fixed",
-    display: "flex",
-    top: 0,
-    right: 0,
-    zIndex: 1,
-    "& a": {
-      display: "block",
-      fontSize: "20px",
-      padding: "20px",
-    },
-  },
   sectionBreak: {
     background: colors.cryptoblue,
     height: sectionHeight + "vh",
@@ -73,7 +65,6 @@ const styles = {
     color: "white",
   },
 
-
   description: {
     maxWidth: 600,
     margin: "10px auto 30px",
@@ -82,11 +73,6 @@ const styles = {
     "& a": {
       color: "black",
     },
-  },
-  pageSubtitle: {
-    textAlign: "center",
-    fontSize: 22,
-    color: "#888",
   },
   graphicContainer: {
     padding: "40vh 2vw 20vh",
@@ -108,8 +94,26 @@ const styles = {
       color: "#fff",
     },
   },
+  infographic: {
+    flexBasis: "40%",
+    position: "sticky",
+    width: "100%",
+    height: "60vh",
+    top: "20vh",
+    display: "flex",
+    alignItems: "center",
+    "& p": {
+      fontSize: "5rem",
+      fontWeight: 700,
+      textAlign: "center",
+      color: "#fff",
+    },
+  },
   scroller: {
     flexBasis: "35%",
+  },
+  infoscroller: {
+    flexBasis: "55%",
   },
   step: {
     margin: "0 auto 1rem auto",
@@ -125,34 +129,37 @@ const styles = {
       marginBottom: 0,
     },
   },
-  textColor: {
-    color: "white",
-  },
-  subhed: {
-    maxWidth: 600,
-    margin: "10px auto 15px",
-    fontSize: 22,
-    lineHeight: "28px",
-    "& a": {
-      color: "black",
+  infostep: {
+    margin: "0 auto 1rem auto",
+    padding: "180px 0",
+    height: "80vh",
+    "& p": {
+      textAlign: "left",
+      padding: "1rem",
+      fontSize: "1.8rem",
+      marginTop: "48vh",
     },
-    textAlign: "center",
+    "&:last-child": {
+      marginBottom: 0,
+    },
   },
 };
 
 class Scrolly extends PureComponent {
   state = {
-    data: 0,
+    data: null,
     steps: [...Array(textContent.length).keys()],
     progress: 0,
-    text: textContent[0],
-    viz: vizContent[0],
+    text: null,
+    viz: null,
   };
 
   onStepEnter = ({ data }) => {
     var text = textContent[data];
     var viz = vizContent[data];
-    this.setState({ data, text, viz });
+    setTimeout(()=>{
+      this.setState({ data, text, viz });
+    },100)
   };
 
   onStepExit = ({ direction, data }) => {
@@ -168,17 +175,19 @@ class Scrolly extends PureComponent {
 
   render() {
     const { data, steps, progress, text, viz } = this.state;
-    const { classes, slice, background } = this.props;
+    const { classes, slice, background, is_info } = this.props;
+    var { text_color } = this.props;
     const startSlice = slice[0];
     const endSlice = slice[1];
+    text_color = text_color ? text_color : "black";
     return (
       <div style={{ background: background }}>
         {/*Container for entire scrollytelling*/}
         <div className={classes.graphicContainer}>
         {/* Container For Right Side Viz*/}
-          <div className={classes.graphic}>{viz}</div>
+          <div className={is_info ? classes.infographic : classes.graphic}>{viz}</div>
           {/*Container For Left Side Text*/}
-          <div className={classes.scroller}>
+          <div className={is_info ? classes.infoscroller : classes.scroller}>
             <Scrollama
               onStepEnter={this.onStepEnter}
               onStepExit={this.onStepExit}
@@ -187,11 +196,10 @@ class Scrolly extends PureComponent {
               offset={0.5}
             >
               {steps.slice(startSlice, endSlice).map((value) => {
-                const isVisible = value === data;
                 return (
                   <Step data={value} key={value}>
-                    <div className={classes.step}>
-                      <p className={classes.textColor}>{text}</p>
+                    <div className={is_info ? classes.infostep : classes.step}>
+                      <p style={{color: text_color}}>{text}</p>
                     </div>
                   </Step>
                 );

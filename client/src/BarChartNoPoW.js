@@ -17,7 +17,7 @@ class BarChartNoPoW extends Component {
 	      this.setState({
 	        algo_energy_data: algo_energy_data
 	      });
-	    }, 3000);
+	    }, 1501);
 	}
 
   // componentWillUnmount() {
@@ -47,7 +47,7 @@ class BarChartNoPoW extends Component {
 
 							>
 								<VictoryLabel 
-									text="Energy Consumption of PoW vs PoS Currencies" 
+									text="Energy Consumption of Consensus Algorithms" 
 									theme={custom_theme}
 									x={120} 
 									y={10} 
@@ -55,11 +55,12 @@ class BarChartNoPoW extends Component {
 									style={[
 								        { 
 								          	fontSize:6,
-								          	fontFamily: "Helvetica",
-								          	fill:colors.cryptocream
+								          	fontFamily: "Roboto",
+								          	fill:colors.cryptogrey
 								        }
 								        ]}
 								/>
+								
 								<VictoryAxis
 									dependentAxis
 									theme={custom_theme}
@@ -72,7 +73,7 @@ class BarChartNoPoW extends Component {
 									tickFormat={(y) => (`${y.toExponential()} `)}
 									style={{
 									// axis: {stroke: "#756f6a"},
-									axisLabel: {fontSize: 4, padding: 17, angle: 270},
+									axisLabel: {fontSize: 4, padding: 19, angle: 270},
 									// grid: {stroke: ({ tick }) => tick > 0.5 ? "red" : "grey"},
 									// ticks: {stroke: "grey", size: 5},
 									tickLabels: {fontSize: 5, padding: 0}
@@ -96,11 +97,12 @@ class BarChartNoPoW extends Component {
 									data={algo_energy_data}
 									x = 'algo'
 									y = 'energy'
-									style={{
-										fontSize:4
-								      // data: { stroke: "#c43a31" },
-								      // parent: { border: "1px solid #ccc"}
-								    }}
+								    style={{
+								    	fontSize:4,
+								      	data: {
+								      		fill:({datum})=> datum.algo==="POW"? colors.cryptoorange :colors.cryptoblue,
+								    }
+									}}
 								    barWidth={25}
 								    sortKey="y"
 								    sortOrder="descending"
@@ -116,7 +118,7 @@ class BarChartNoPoW extends Component {
 								    	/>
 								    }
 								    animate={{
-										duration: 1500,
+
 										onLoad:{
 											before: (datum)=>{datum._y=1}	
 										}
