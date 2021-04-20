@@ -53,6 +53,12 @@ function App() {
         textColor={colors.cryptoblack}
         backgroundColor={colors.cryptocream}
       />
+      <SectionScreen
+        title={""}
+        text={sectionContent[5]}
+        textColor={colors.cryptoblack}
+        backgroundColor={colors.cryptocream}
+      />
     </div>
   );
 }

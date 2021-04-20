@@ -60,7 +60,7 @@ class RenewableAdoption extends Component {
                 style={{title: {fontSize: 12, fill:colors.cryptogrey },labels: {fontSize: 10 } }}
                 data={[
                   {
-                    name: "Total Energy",
+                    name: "Non-Renewable Energy",
                     symbol: { fill: colors.cryptoorange },
                     labels: { fill: colors.cryptogrey },
                   },

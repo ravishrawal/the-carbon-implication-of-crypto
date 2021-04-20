@@ -74,7 +74,7 @@ const scrollyContent = [
                           The total number of computations (hashes) per second being performed by all miners to 
                           solve the puzzle at any given time is known as the hash rate. The Bitcoin system is designed
                           such that the puzzles become harder as more people try to mine Bitcoin, thereby increasing 
-                          energy consumption.<sup className="superscript">1,2</sup>
+                          energy consumption.<sup className="superscript">2,9</sup>
                         </p>
                       </div>,
                       <div className='term-div'>
@@ -82,7 +82,7 @@ const scrollyContent = [
                           Extrapolating the rate of energy consumption of the Bitcoin network and its 
                           adoption of renewable energy over the last decade indicates 
                           that its carbon footprint will increase exponentially.
-                          <sup className="superscript">9,10</sup>
+                          <sup className="superscript">10,11</sup>
                         </p>
                       </div>,
                       <div className='term-div'>
@@ -105,7 +105,7 @@ const scrollyContent = [
                           <br/><br/>
                           Ethereum, the #2 cryptocurrency by market cap, is making the switch, and 
                           stands to reduce energy consumption by 99%, by some estimates.
-                          <sup className="superscript">11</sup>
+                          <sup className="superscript">12</sup>
                         </p>
                       </div>,
                       <div className='term-div'>
@@ -121,7 +121,7 @@ const scrollyContent = [
                           energy consumption of the network, normalized by trading volume. 
                           <br/><br/>
                           The algorithms listed are used by the top 20 cryptocurrencies in 2020.
-                          <sup className="superscript">12</sup> 
+                          <sup className="superscript">13</sup> 
                           <br/><br/>
                           Bitcoin uses SHA-256, which is an efficient PoW model. In the short-term we can 
                           require other cryptocurrencies to achieve similar effiencies. 
@@ -136,7 +136,7 @@ const scrollyContent = [
                         <p className='term-content'>
                           Some experts suggest levying a Carbon Tax on mining activity. Some 
                           authorities, like those in Quebec, Canada have increased the cost of 
-                          electricity for miners. <sup className="superscript">13</sup>
+                          electricity for miners. <sup className="superscript">14,15</sup>
                         </p>
                       </div>,
                     ]
@@ -180,21 +180,27 @@ const sectionContent = [
                           </ol> <br/>
                           Let's discuss these further.
                       </p>,
-                      <p className='sectionText bibliographyText'>
+                      <p className='sectionText bibliographyText' style={{paddingTop:"3vh"}}>
                         <ol>
-                          <li>Bitcoin Currency Statistics: <a href="https://knoema.com/BITCONCS/bitcoin-currency-statistics-daily-update">Knoema Dataset</a></li>
+                          <li>Bitcoin Currency Statistics: <a href="https://knoema.com/BITCONCS/bitcoin-currency-statistics-daily-update">Knoema Currency Statistics Dataset</a></li>
                           <li>Bitcoin Energy Consumption: <a href="https://cbeci.org">CBECI</a> </li>
                           <li>NYC Subway Energy Consumption: <a href="https://www.nycsubway.org/wiki/Subway_FAQ:_Facts_and_Figures">NYC Subway Facts & Figures</a> </li>
                           <li>Flight Energy Consumption: <a href="https://www.withouthotair.com/c5/page_36.shtml">Without Air</a> </li>
                           <li>US Household Energy Consumption: <a href="https://www.eia.gov/tools/faqs/faq.php?id=97&t=3">EIA FAQs</a> </li>
                           <li>US Energy Consumption By Industry: <a href="https://www.eia.gov/consumption/manufacturing/data/2018/#r13">EIA Manufacturing Data</a> </li>
-                          <li>Bitcoin vs Visa Energy Consumption: <a href="https://www.statista.com/statistics/881541/bitcoin-energy-consumption-transaction-comparison-visa/ ">Statista Dataset</a> Normalized To Per Microtransaction Applying Max Transactions Per Block</li>
-                          <li>Max Transactions Per Block: <a href="https://towardsdatascience.com/the-blockchain-scalability-problem-the-race-for-visa-like-transaction-speed-5cce48f9d44">The Blockchain Scalability Problem</a> </li>
+                          <li>Bitcoin vs Visa Energy Consumption: <a href="https://www.statista.com/statistics/881541/bitcoin-energy-consumption-transaction-comparison-visa/ ">Statista Dataset</a> Normalized To Per Microtransaction Applying Average Transactions Per Block</li>
+                          <li>Average Transactions Per Block: <a href="https://towardsdatascience.com/the-blockchain-scalability-problem-the-race-for-visa-like-transaction-speed-5cce48f9d44">The Blockchain Scalability Problem</a> </li>
+                          <li>Bitcoin Hash Rate Statistics: <a href="https://knoema.com/CMCCD2019/coin-metrics-crypto-currency-data">Knoema Crypto Metrics Dataset</a></li>
                           <li>Qin, Shize, et al. "Bitcoin's future carbon footprint." arXiv preprint arXiv:2011.02612 (2020). <a href="https://arxiv.org/pdf/2011.02612.pdf">https://arxiv.org/pdf/2011.02612.pdf</a></li>
                           <li>Renewable Energy Projections: <a href="https://ourworldindata.org/grapher/modern-renewable-energy-consumption?country=~OWID_WRL">Our World In Data Dataset</a> Extrapolated Using 5 Year Moving Average </li>
+                          <li>Ethereum PoS Efficiency: <a href="https://spectrum.ieee.org/computing/networks/ethereum-plans-to-cut-its-absurd-energy-consumption-by-99-percent">IEEE Article</a></li>
                           <li>Gallersdörfer U, Klaaßen L, Stoll C. Energy Consumption of Cryptocurrencies Beyond Bitcoin. Joule. 2020;4(9):1843-1846. doi:10.1016/j.joule.2020.07.013</li>
-                          <li>VIREN TODO: Crypto Canadian Tax</li>
+                          <li>Quebec Allows Higher Energy Charges For Miners: <a href="https://montrealgazette.com/news/local-news/hydro-quebec-allowed-to-charge-cryptocurrency-miners-increased-rates"> Montreal Gazette</a> </li>
+                          <li>Canada Imposes Carbon Tax: <a href="https://www.canada.ca/en/environment-climate-change/services/climate-change/pricing-pollution-how-it-will-work.html"> Canadian Government Press Release</a></li>
                         </ol>
+                      </p>,
+                      <p className='sectionText' style={{fontSize:"32px", fontWeight:"400"}}>
+                        Read more about how this viz was created <a href="https://ravishrawal.medium.com/making-the-environmental-impact-of-bitcoin-dc884c63ad00">here</a>
                       </p>
                     ]
 

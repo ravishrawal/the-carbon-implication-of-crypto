@@ -17,6 +17,7 @@ import BenefitsTable from "./BenefitsTable.png";
 import BitcoinImg from "./bitcoin-img.jpeg";
 import MiningImg from "./crypto-mining-img.jpeg";
 import BlockchainImg from "./blockchain-img.jpeg";
+import CarbonTaxImg from "./carbontax.jpg";
 
 import { colors } from "./theme.js";
 
@@ -40,6 +41,7 @@ const vizContent = [
   <RenewableAdoption />,
   <BarChartNoPoW />,
   <BarChart />,
+  <img src={CarbonTaxImg} />,
 ];
 
 const sectionHeight = 100;
