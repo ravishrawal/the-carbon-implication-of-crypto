@@ -14,7 +14,8 @@ const styles = {
     fontSize: 72,
     fontFamily: 'Roboto',
     fontWeight: 300,
-    paddingLeft: '300px'
+    paddingLeft: '300px',
+    margin:'0'
     // padding: sectionHeight/3 +"vh 0%"
 
   },
