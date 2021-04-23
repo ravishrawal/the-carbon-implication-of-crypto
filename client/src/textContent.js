@@ -60,7 +60,7 @@ const scrollyContent = [
                         <p className='term-header'>Cryptocurrency Mining</p>
                         <p className='term-content'>
                           In the Bitcoin blockchain, new blocks are added only if the 
-                          the computer suggesting its addition has found the solution to a computationally intensive 
+                          computer suggesting its addition has found the solution to a computationally intensive 
                           puzzle based on a ‘hash function’ called SHA-256. Computers that are able to crack the code and add blocks
                           are rewarded with Bitcoins. Since this process creates Bitcoins, it is known as mining.
                           <br/><br/>
@@ -137,6 +137,9 @@ const scrollyContent = [
                           Some experts suggest levying a Carbon Tax on mining activity. Some 
                           authorities, like those in Quebec, Canada have increased the cost of 
                           electricity for miners. <sup className="superscript">14,15</sup>
+                          <br/><br/>
+                          Clearly, a larger discussion on the sustainable rollout of cryptocurrency is required. 
+                          Conversations like this are only the start, but just like Satoshi envisioned, we should all have a say.
                         </p>
                       </div>,
                     ]
