@@ -1,23 +1,15 @@
-# the-carbon-implication-of-crypto
+# The Carbon Implication of Bitcoin
 
-Crypto is tearing me apart, Lisa
+### A data visualization to highlight the severity of Bitcoin's environmental impact, and a call for responsible decision-making.
 
-Before starting, run:
-  ```js
-  npm install
-  ```
-  
-Then from client folder, run:
-  ```js
-  npm start
-  ```
+##### Made by Ravish Rawal, Viren Bajaj, Hector Liang, and Kamrul Hossain at Columbia University, 2021.
 
-## deploy React build in Google App Engine
+##### Live Viz: https://carbon-implication.uc.r.appspot.com/
 
-- create a new project
-- create a google app engine instance
+##### Tools Used:
 
-```js
-gcloud config set project carbon-implication
-gcloud app deploy
-```
+* React
+* HTML/CSS
+* VictoryJS
+* Scrollama
+
